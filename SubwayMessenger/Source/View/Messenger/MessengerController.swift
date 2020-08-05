@@ -14,7 +14,6 @@ class MessengerController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .red
         print("messengerView")
-        // Do any additional setup after loading the view.
     }
 
 }

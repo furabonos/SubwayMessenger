@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679439D24DA3B7F00F258C3 /* AppDelegate.swift */; };
-		567943A224DA3B7F00F258C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943A124DA3B7F00F258C3 /* ViewController.swift */; };
 		567943A524DA3B7F00F258C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A324DA3B7F00F258C3 /* Main.storyboard */; };
 		567943A724DA3B8100F258C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567943A624DA3B8100F258C3 /* Assets.xcassets */; };
 		567943AA24DA3B8100F258C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A824DA3B8100F258C3 /* LaunchScreen.storyboard */; };
@@ -26,7 +25,6 @@
 		215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubwayMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439A24DA3B7F00F258C3 /* SubwayMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439D24DA3B7F00F258C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		567943A124DA3B7F00F258C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		567943A424DA3B7F00F258C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		567943A624DA3B8100F258C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		567943A924DA3B8100F258C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				567943B324DA3F8200F258C3 /* Core */,
 				567943B224DA3F7B00F258C3 /* Source */,
 				567943B124DA3F6C00F258C3 /* SupportingFiles */,
-				567943A124DA3B7F00F258C3 /* ViewController.swift */,
 				567943A324DA3B7F00F258C3 /* Main.storyboard */,
 				567943A824DA3B8100F258C3 /* LaunchScreen.storyboard */,
 				567943AB24DA3B8100F258C3 /* Info.plist */,
@@ -305,7 +302,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				87A2305424DAD92800810364 /* MessengerController.swift in Sources */,
-				567943A224DA3B7F00F258C3 /* ViewController.swift in Sources */,
 				87A2305024DAD87500810364 /* TabbarController.swift in Sources */,
 				5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */,
 				567943BD24DA423D00F258C3 /* Service.swift in Sources */,

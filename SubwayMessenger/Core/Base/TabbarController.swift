@@ -20,16 +20,6 @@ class TabbarController: UITabBarController {
         tabList[0].title = "messenger"
         tabList[1].title = "subway"
         viewControllers = tabList
-//        let firsts = ViewController()
-//        //        firsts.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-//
-//                let seconds = SecondViewController()
-//        //        seconds.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
-//
-//                let tabList = [firsts, seconds]
-//                tabList[0].title = "sss"
-//                tabList[1].title = "xxx"
-//                viewControllers = tabList
     }
 
 }
