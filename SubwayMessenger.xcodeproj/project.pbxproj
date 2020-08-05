@@ -16,6 +16,7 @@
 		567943BB24DA423500F258C3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BA24DA423500F258C3 /* Model.swift */; };
 		567943BD24DA423D00F258C3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BC24DA423D00F258C3 /* Service.swift */; };
 		567943BF24DA425000F258C3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BE24DA425000F258C3 /* TestViewController.swift */; };
+		87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304D24DAD76700810364 /* BaseViewController.swift */; };
 		D64F44B34AFF789C842D7EED /* Pods_SubwayMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		567943BA24DA423500F258C3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		567943BC24DA423D00F258C3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		567943BE24DA425000F258C3 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		87A2304D24DAD76700810364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E799FECAE8E7BA628AEDD364 /* Pods-SubwayMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubwayMessenger.debug.xcconfig"; path = "Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger.debug.xcconfig"; sourceTree = "<group>"; };
 		ED61D9D40E9D7A2153E40D54 /* Pods-SubwayMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubwayMessenger.release.xcconfig"; path = "Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				5679439D24DA3B7F00F258C3 /* AppDelegate.swift */,
+				87A2304C24DAD75300810364 /* Base */,
 				567943B424DA40A200F258C3 /* Navigator */,
 			);
 			path = Core;
@@ -137,6 +140,14 @@
 				567943BA24DA423500F258C3 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		87A2304C24DAD75300810364 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				87A2304D24DAD76700810364 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		8C58A77E4390735822D2385B /* Frameworks */ = {
@@ -276,6 +287,7 @@
 				567943BD24DA423D00F258C3 /* Service.swift in Sources */,
 				567943B624DA40E300F258C3 /* Navigator.swift in Sources */,
 				567943BF24DA425000F258C3 /* TestViewController.swift in Sources */,
+				87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */,
 				567943BB24DA423500F258C3 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -406,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -422,7 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6DKSMCWLJ;
+				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				INFOPLIST_FILE = SubwayMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,7 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6DKSMCWLJ;
+				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				INFOPLIST_FILE = SubwayMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
