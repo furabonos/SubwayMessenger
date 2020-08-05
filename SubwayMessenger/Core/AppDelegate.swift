@@ -12,8 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
-
+    var naviController: UINavigationController?
+    let navigator = Navigator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupRoot()
@@ -21,11 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupRoot() {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
-        window?.backgroundColor = .blue
+       window = UIWindow(frame: UIScreen.main.bounds)
+        let navController = UINavigationController(rootViewController: TabbarController())
+        navController.isNavigationBarHidden = true
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
+    
 
 
 }

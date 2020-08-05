@@ -1,5 +1,5 @@
 //
-//  BaseViewController.swift
+//  MessengerController.swift
 //  SubwayMessenger
 //
 //  Created by 엄태형 on 2020/08/05.
@@ -8,18 +8,13 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class MessengerController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupConstraints()
-        bind()
+        self.view.backgroundColor = .red
+        print("messengerView")
         // Do any additional setup after loading the view.
     }
-    
-    func setupUI() {}
-    func setupConstraints() {}
-    func bind() {}
 
 }

@@ -17,6 +17,8 @@
 		567943BD24DA423D00F258C3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BC24DA423D00F258C3 /* Service.swift */; };
 		567943BF24DA425000F258C3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BE24DA425000F258C3 /* TestViewController.swift */; };
 		87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304D24DAD76700810364 /* BaseViewController.swift */; };
+		87A2305024DAD87500810364 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304F24DAD87500810364 /* TabbarController.swift */; };
+		87A2305424DAD92800810364 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2305324DAD92800810364 /* MessengerController.swift */; };
 		D64F44B34AFF789C842D7EED /* Pods_SubwayMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		567943BC24DA423D00F258C3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		567943BE24DA425000F258C3 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		87A2304D24DAD76700810364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		87A2304F24DAD87500810364 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		87A2305324DAD92800810364 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
 		E799FECAE8E7BA628AEDD364 /* Pods-SubwayMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubwayMessenger.debug.xcconfig"; path = "Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger.debug.xcconfig"; sourceTree = "<group>"; };
 		ED61D9D40E9D7A2153E40D54 /* Pods-SubwayMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubwayMessenger.release.xcconfig"; path = "Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +125,8 @@
 		567943B724DA415700F258C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				567943BE24DA425000F258C3 /* TestViewController.swift */,
+				87A2305124DAD88E00810364 /* Messenger */,
+				87A2305224DAD89E00810364 /* Subway */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,8 +151,25 @@
 			isa = PBXGroup;
 			children = (
 				87A2304D24DAD76700810364 /* BaseViewController.swift */,
+				87A2304F24DAD87500810364 /* TabbarController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		87A2305124DAD88E00810364 /* Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				87A2305324DAD92800810364 /* MessengerController.swift */,
+			);
+			path = Messenger;
+			sourceTree = "<group>";
+		};
+		87A2305224DAD89E00810364 /* Subway */ = {
+			isa = PBXGroup;
+			children = (
+				567943BE24DA425000F258C3 /* TestViewController.swift */,
+			);
+			path = Subway;
 			sourceTree = "<group>";
 		};
 		8C58A77E4390735822D2385B /* Frameworks */ = {
@@ -282,7 +304,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A2305424DAD92800810364 /* MessengerController.swift in Sources */,
 				567943A224DA3B7F00F258C3 /* ViewController.swift in Sources */,
+				87A2305024DAD87500810364 /* TabbarController.swift in Sources */,
 				5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */,
 				567943BD24DA423D00F258C3 /* Service.swift in Sources */,
 				567943B624DA40E300F258C3 /* Navigator.swift in Sources */,
