@@ -3,27 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679439D24DA3B7F00F258C3 /* AppDelegate.swift */; };
-		567943A024DA3B7F00F258C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679439F24DA3B7F00F258C3 /* SceneDelegate.swift */; };
 		567943A224DA3B7F00F258C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943A124DA3B7F00F258C3 /* ViewController.swift */; };
 		567943A524DA3B7F00F258C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A324DA3B7F00F258C3 /* Main.storyboard */; };
 		567943A724DA3B8100F258C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567943A624DA3B8100F258C3 /* Assets.xcassets */; };
 		567943AA24DA3B8100F258C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A824DA3B8100F258C3 /* LaunchScreen.storyboard */; };
+		567943B624DA40E300F258C3 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943B524DA40E300F258C3 /* Navigator.swift */; };
+		D64F44B34AFF789C842D7EED /* Pods_SubwayMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubwayMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439A24DA3B7F00F258C3 /* SubwayMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439D24DA3B7F00F258C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5679439F24DA3B7F00F258C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		567943A124DA3B7F00F258C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		567943A424DA3B7F00F258C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		567943A624DA3B8100F258C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		567943A924DA3B8100F258C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		567943AB24DA3B8100F258C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		567943B524DA40E300F258C3 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		E799FECAE8E7BA628AEDD364 /* Pods-SubwayMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubwayMessenger.debug.xcconfig"; path = "Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		ED61D9D40E9D7A2153E40D54 /* Pods-SubwayMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubwayMessenger.release.xcconfig"; path = "Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64F44B34AFF789C842D7EED /* Pods_SubwayMessenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				5679439C24DA3B7F00F258C3 /* SubwayMessenger */,
 				5679439B24DA3B7F00F258C3 /* Products */,
+				D1136736D45BE2D5B941F178 /* Pods */,
+				8C58A77E4390735822D2385B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +63,88 @@
 		5679439C24DA3B7F00F258C3 /* SubwayMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				5679439D24DA3B7F00F258C3 /* AppDelegate.swift */,
-				5679439F24DA3B7F00F258C3 /* SceneDelegate.swift */,
+				567943B324DA3F8200F258C3 /* Core */,
+				567943B224DA3F7B00F258C3 /* Source */,
+				567943B124DA3F6C00F258C3 /* SupportingFiles */,
 				567943A124DA3B7F00F258C3 /* ViewController.swift */,
 				567943A324DA3B7F00F258C3 /* Main.storyboard */,
-				567943A624DA3B8100F258C3 /* Assets.xcassets */,
 				567943A824DA3B8100F258C3 /* LaunchScreen.storyboard */,
 				567943AB24DA3B8100F258C3 /* Info.plist */,
 			);
 			path = SubwayMessenger;
+			sourceTree = "<group>";
+		};
+		567943B124DA3F6C00F258C3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				567943A624DA3B8100F258C3 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		567943B224DA3F7B00F258C3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				567943B924DA416600F258C3 /* Model */,
+				567943B824DA415F00F258C3 /* Service */,
+				567943B724DA415700F258C3 /* View */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		567943B324DA3F8200F258C3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5679439D24DA3B7F00F258C3 /* AppDelegate.swift */,
+				567943B424DA40A200F258C3 /* Navigator */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		567943B424DA40A200F258C3 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				567943B524DA40E300F258C3 /* Navigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		567943B724DA415700F258C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		567943B824DA415F00F258C3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		567943B924DA416600F258C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C58A77E4390735822D2385B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1136736D45BE2D5B941F178 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E799FECAE8E7BA628AEDD364 /* Pods-SubwayMessenger.debug.xcconfig */,
+				ED61D9D40E9D7A2153E40D54 /* Pods-SubwayMessenger.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 567943AE24DA3B8100F258C3 /* Build configuration list for PBXNativeTarget "SubwayMessenger" */;
 			buildPhases = (
+				3552A281EAFA6C69ACE4873B /* [CP] Check Pods Manifest.lock */,
 				5679439624DA3B7F00F258C3 /* Sources */,
 				5679439724DA3B7F00F258C3 /* Frameworks */,
 				5679439824DA3B7F00F258C3 /* Resources */,
+				103E280C2BAA6144F0F92165 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +215,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		103E280C2BAA6144F0F92165 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3552A281EAFA6C69ACE4873B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SubwayMessenger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5679439624DA3B7F00F258C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +264,7 @@
 			files = (
 				567943A224DA3B7F00F258C3 /* ViewController.swift in Sources */,
 				5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */,
-				567943A024DA3B7F00F258C3 /* SceneDelegate.swift in Sources */,
+				567943B624DA40E300F258C3 /* Navigator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +406,7 @@
 		};
 		567943AF24DA3B8100F258C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E799FECAE8E7BA628AEDD364 /* Pods-SubwayMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +425,7 @@
 		};
 		567943B024DA3B8100F258C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED61D9D40E9D7A2153E40D54 /* Pods-SubwayMessenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
