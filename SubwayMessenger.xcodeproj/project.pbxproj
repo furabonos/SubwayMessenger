@@ -13,6 +13,9 @@
 		567943A724DA3B8100F258C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567943A624DA3B8100F258C3 /* Assets.xcassets */; };
 		567943AA24DA3B8100F258C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A824DA3B8100F258C3 /* LaunchScreen.storyboard */; };
 		567943B624DA40E300F258C3 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943B524DA40E300F258C3 /* Navigator.swift */; };
+		567943BB24DA423500F258C3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BA24DA423500F258C3 /* Model.swift */; };
+		567943BD24DA423D00F258C3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BC24DA423D00F258C3 /* Service.swift */; };
+		567943BF24DA425000F258C3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BE24DA425000F258C3 /* TestViewController.swift */; };
 		D64F44B34AFF789C842D7EED /* Pods_SubwayMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,9 @@
 		567943A924DA3B8100F258C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		567943AB24DA3B8100F258C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567943B524DA40E300F258C3 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		567943BA24DA423500F258C3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		567943BC24DA423D00F258C3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		567943BE24DA425000F258C3 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		E799FECAE8E7BA628AEDD364 /* Pods-SubwayMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubwayMessenger.debug.xcconfig"; path = "Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger.debug.xcconfig"; sourceTree = "<group>"; };
 		ED61D9D40E9D7A2153E40D54 /* Pods-SubwayMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubwayMessenger.release.xcconfig"; path = "Target Support Files/Pods-SubwayMessenger/Pods-SubwayMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +118,7 @@
 		567943B724DA415700F258C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				567943BE24DA425000F258C3 /* TestViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,6 +126,7 @@
 		567943B824DA415F00F258C3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				567943BC24DA423D00F258C3 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 		567943B924DA416600F258C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				567943BA24DA423500F258C3 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,7 +273,10 @@
 			files = (
 				567943A224DA3B7F00F258C3 /* ViewController.swift in Sources */,
 				5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */,
+				567943BD24DA423D00F258C3 /* Service.swift in Sources */,
 				567943B624DA40E300F258C3 /* Navigator.swift in Sources */,
+				567943BF24DA425000F258C3 /* TestViewController.swift in Sources */,
+				567943BB24DA423500F258C3 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
