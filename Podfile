@@ -7,6 +7,7 @@ target 'SubwayMessenger' do
 
   # Pods for SubwayMessenger
 pod 'Alamofire', '~> 4.4'
+pod 'DropDown', '~> 2.3.4'
 pod 'Kingfisher'
 pod 'SnapKit'
 pod 'NVActivityIndicatorView'

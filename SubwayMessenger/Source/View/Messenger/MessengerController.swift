@@ -7,43 +7,47 @@
 //
 
 import UIKit
+import DropDown
 
 class MessengerController: BaseViewController {
     
-    var ssss: MessengerServiceType = MessengerService()
-    var llist: [StationPoi] = []
-
+    private let viewModel = MessengerViewModel()
+    var dropDown: DropDown?
+    
+    var btns: UIButton = {
+        var b = UIButton()
+        b.backgroundColor = .systemOrange
+        b.addTarget(self, action: #selector(bbb), for: .touchUpInside)
+        return b
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
-        print("messengerView")
-        ssss.findSchedule(station: "언주") { (result) in
-            switch result {
-            case .success(let value):
-                print("zz = \(value)")
-            case .failure(let error):
-                print("fsf = \(error)")
-            }
+        self.view.backgroundColor = UIColor(red: 255/255, green: 232/255, blue: 0/255, alpha: 1)
+        self.dropDown = DropDown()
+        dropDown?.anchorView = btns
+        dropDown?.bottomOffset = CGPoint(x: 0, y:(dropDown?.anchorView?.plainView.bounds.height)!)
+        dropDown?.dataSource = ["car", "ss", "cc"]
+        dropDown?.selectionAction = { [unowned self] (index: Int, item: String) in
+          print("Selected item: \(item) at index: \(index)")
         }
-//        let lat = "37.50848388671875"
-//        let lon = "127.03744043284128"
-//        ssss.findStation(lat: lat, lon: lon) { (result) in
-//            switch result {
-//            case .success(let value):
-////                print("xx = \(value.searchPoiInfo.pois)")
-//                self.llist = value.searchPoiInfo.pois.poi
-//            case .failure(let error):
-//                print("zzz = \(error)")
-//            }
-//        }
     }
     
     override func setupUI() {
-        print("z")
+        print("Z")
+        self.view.addSubview(btns)
     }
     
     override func setupConstraints() {
-        print("Z")
+        print("v")
+        btns.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(100)
+        }
+    }
+    
+    @objc func bbb() {
+        dropDown?.show()
     }
 
 }
