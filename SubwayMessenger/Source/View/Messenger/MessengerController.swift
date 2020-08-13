@@ -16,18 +16,19 @@ class MessengerController: BaseViewController {
     
     var lineBtn: UIButton = {
         var b = UIButton()
-        b.setTitle("몇호선", for: .normal)
+//        b.setTitle("몇호선", for: .normal)
         b.setTitleColor(.black, for: .normal)
-        b.backgroundColor = .white
+        b.backgroundColor = .clear
         b.addTarget(self, action: #selector(sdsd), for: .touchUpInside)
+        b.setImage(UIImage(named: "trainsss"), for: .normal)
         return b
     }()
     
     var searchBtn: UIButton = {
         var b = UIButton()
-        b.setTitle("찾기", for: .normal)
         b.setTitleColor(.systemBlue, for: .normal)
-        b.backgroundColor = .white
+        b.backgroundColor = .clear
+        b.setImage(UIImage(named: "aims"), for: .normal)
         return b
     }()
     
@@ -39,9 +40,10 @@ class MessengerController: BaseViewController {
     
     var sendBtn: UIButton = {
         var b = UIButton()
-        b.setTitle("전송", for: .normal)
+//        b.setTitle("전송", for: .normal)
         b.setTitleColor(.systemBlue, for: .normal)
-        b.backgroundColor = .white
+        b.backgroundColor = .clear
+        b.setImage(UIImage(named: "mail"), for: .normal)
         return b
     }()
     
@@ -67,14 +69,14 @@ class MessengerController: BaseViewController {
         print("v")
         lineBtn.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin).offset(100)
-            $0.leading.equalToSuperview().offset(30)
-            $0.width.equalTo(150)
+            $0.leading.equalToSuperview().offset(60)
+            $0.width.equalTo(70)
             $0.height.equalTo(30)
         }
         
         searchBtn.snp.makeConstraints {
             $0.top.equalTo(lineBtn.snp.top)
-            $0.trailing.equalToSuperview().offset(-50)
+            $0.trailing.equalToSuperview().offset(-60)
             $0.width.equalTo(70)
             $0.height.equalTo(30)
         }
@@ -89,7 +91,7 @@ class MessengerController: BaseViewController {
         sendBtn.snp.makeConstraints {
             $0.top.equalTo(textField.snp.bottom).offset(50)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(70)
+            $0.width.equalTo(50)
             $0.height.equalTo(50)
         }
     }
