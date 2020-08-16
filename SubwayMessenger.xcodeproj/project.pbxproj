@@ -21,6 +21,7 @@
 		87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304D24DAD76700810364 /* BaseViewController.swift */; };
 		87A2305024DAD87500810364 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304F24DAD87500810364 /* TabbarController.swift */; };
 		87A2305424DAD92800810364 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2305324DAD92800810364 /* MessengerController.swift */; };
+		87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */; };
 		87C60CEB24DC3D3F00B5A197 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEA24DC3D3F00B5A197 /* StationModel.swift */; };
 		87C60CED24DC3D5F00B5A197 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEC24DC3D5F00B5A197 /* ScheduleModel.swift */; };
 		87C60CEF24DFC14A00B5A197 /* MessengerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEE24DFC14A00B5A197 /* MessengerService.swift */; };
@@ -45,6 +46,7 @@
 		87A2304D24DAD76700810364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		87A2304F24DAD87500810364 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		87A2305324DAD92800810364 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
+		87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsViewController.swift; sourceTree = "<group>"; };
 		87C60CEA24DC3D3F00B5A197 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
 		87C60CEC24DC3D5F00B5A197 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		87C60CEE24DFC14A00B5A197 /* MessengerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerService.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				87A2305324DAD92800810364 /* MessengerController.swift */,
 				870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */,
+				87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				870034B824DFC6420038A8BD /* URLReq.swift in Sources */,
+				87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */,
 				87A2305424DAD92800810364 /* MessengerController.swift in Sources */,
 				87A2305024DAD87500810364 /* TabbarController.swift in Sources */,
 				87C60CED24DC3D5F00B5A197 /* ScheduleModel.swift in Sources */,
