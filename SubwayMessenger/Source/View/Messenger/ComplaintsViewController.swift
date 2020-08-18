@@ -23,6 +23,32 @@ class ComplaintsViewController: BaseViewController {
         return b
     }()
     
+    var sendBtn: UIButton = {
+        var b = UIButton()
+        b.backgroundColor = .brown
+        b.setTitle("전송", for: .normal)
+        b.setTitleColor(.white, for: .normal)
+        b.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        return b
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+//        layout.sectionHeadersPinToVisibleBounds = false
+//        layout.minimumInteritemSpacing = UI.Metric.itemSpacing
+        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
+        cv.backgroundColor = .red
+//        cv.delegate = self
+//        cv.dataSource = self
+//        cv.register(MainRecViewCell.self, forCellWithReuseIdentifier: self.mainRecViewCell)
+//        cv.register(GADCell.self, forCellWithReuseIdentifier: self.gadCell)
+//        cv.register(MainCell.self, forCellWithReuseIdentifier: self.mainCell)
+//        cv.register(MainChannelCell.self, forCellWithReuseIdentifier: self.mainChannelCell)
+//        cv.register(MiniGADCell.self, forCellWithReuseIdentifier: self.miniGadCell)
+    //        cv.register(MainNoticeCell.self, forCellWithReuseIdentifier: self.mainNoticeCell)
+         return cv
+    }()
+    
     init(line: String, train: String) {
         self.lineNumber = line
         self.trainNumber = train
@@ -34,18 +60,26 @@ class ComplaintsViewController: BaseViewController {
     }
 
     override func viewDidLoad() {
-        self.view.backgroundColor = .orange
+//        self.view.backgroundColor = .white
         print("zzzzzzz = \(self.lineNumber), \(trainNumber)")
         super.viewDidLoad()
     }
     
     override func setupUI() {
-        print("Z")
         self.setNavigationBar()
+        [sendBtn, collectionView].forEach { self.view.addSubview($0) }
     }
     
     override func setupConstraints() {
-        print("v")
+        sendBtn.snp.makeConstraints {
+            $0.bottom.leading.trailing.equalToSuperview()
+            $0.height.equalTo(70)
+        }
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(navBar.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(sendBtn.snp.top)
+        }
     }
     
     @objc func backClick() {
