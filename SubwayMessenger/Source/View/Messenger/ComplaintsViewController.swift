@@ -15,6 +15,8 @@ class ComplaintsViewController: BaseViewController {
     
     var navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     
+    var infoCell = "InfoCell"
+    
     var backBtn: UIButton = {
         var b = UIButton()
         b.setImage(UIImage(named: "backIcon"), for: .normal)
@@ -38,9 +40,9 @@ class ComplaintsViewController: BaseViewController {
 //        layout.minimumInteritemSpacing = UI.Metric.itemSpacing
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
         cv.backgroundColor = .red
-//        cv.delegate = self
-//        cv.dataSource = self
-//        cv.register(MainRecViewCell.self, forCellWithReuseIdentifier: self.mainRecViewCell)
+        cv.delegate = self
+        cv.dataSource = self
+        cv.register(InfoCell.self, forCellWithReuseIdentifier: self.infoCell)
 //        cv.register(GADCell.self, forCellWithReuseIdentifier: self.gadCell)
 //        cv.register(MainCell.self, forCellWithReuseIdentifier: self.mainCell)
 //        cv.register(MainChannelCell.self, forCellWithReuseIdentifier: self.mainChannelCell)
@@ -87,6 +89,7 @@ class ComplaintsViewController: BaseViewController {
     }
     
     func setNavigationBar() {
+        navBar.barTintColor = .white
         let barvv = UIBarButtonItem(customView: backBtn)
         let navItem = UINavigationItem(title: "")
         navItem.leftBarButtonItem = barvv
@@ -99,4 +102,26 @@ class ComplaintsViewController: BaseViewController {
         }
     }
 
+}
+
+extension ComplaintsViewController: UICollectionViewDelegate {}
+extension ComplaintsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.infoCell, for: indexPath) as! InfoCell
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+}
+
+extension ComplaintsViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.bounds.width, height: 200)
+    }
 }

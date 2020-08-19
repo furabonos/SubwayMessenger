@@ -18,6 +18,8 @@
 		870034BA24DFC67E0038A8BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034B924DFC67E0038A8BD /* Result.swift */; };
 		870034BC24DFD1B60038A8BD /* ETCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034BB24DFD1B60038A8BD /* ETCMethod.swift */; };
 		870034BE24E17A5F0038A8BD /* MessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */; };
+		8791C18524ED5C21002E5732 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18424ED5C21002E5732 /* InfoCell.swift */; };
+		8791C18724ED5C70002E5732 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */; };
 		87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304D24DAD76700810364 /* BaseViewController.swift */; };
 		87A2305024DAD87500810364 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304F24DAD87500810364 /* TabbarController.swift */; };
 		87A2305424DAD92800810364 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2305324DAD92800810364 /* MessengerController.swift */; };
@@ -43,6 +45,8 @@
 		870034B924DFC67E0038A8BD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		870034BB24DFD1B60038A8BD /* ETCMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETCMethod.swift; sourceTree = "<group>"; };
 		870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewModel.swift; sourceTree = "<group>"; };
+		8791C18424ED5C21002E5732 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		87A2304D24DAD76700810364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		87A2304F24DAD87500810364 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		87A2305324DAD92800810364 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
@@ -162,11 +166,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8791C18324ED5B28002E5732 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8791C18424ED5C21002E5732 /* InfoCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		87A2304C24DAD75300810364 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				87A2304D24DAD76700810364 /* BaseViewController.swift */,
 				87A2304F24DAD87500810364 /* TabbarController.swift */,
+				8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -177,6 +190,7 @@
 				87A2305324DAD92800810364 /* MessengerController.swift */,
 				870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */,
 				87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */,
+				8791C18324ED5B28002E5732 /* Cell */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -335,7 +349,9 @@
 				87A2305424DAD92800810364 /* MessengerController.swift in Sources */,
 				87A2305024DAD87500810364 /* TabbarController.swift in Sources */,
 				87C60CED24DC3D5F00B5A197 /* ScheduleModel.swift in Sources */,
+				8791C18524ED5C21002E5732 /* InfoCell.swift in Sources */,
 				5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */,
+				8791C18724ED5C70002E5732 /* BaseCollectionViewCell.swift in Sources */,
 				870034BC24DFD1B60038A8BD /* ETCMethod.swift in Sources */,
 				567943BD24DA423D00F258C3 /* Service.swift in Sources */,
 				870034BA24DFC67E0038A8BD /* Result.swift in Sources */,
