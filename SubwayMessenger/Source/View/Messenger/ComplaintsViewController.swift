@@ -16,6 +16,7 @@ class ComplaintsViewController: BaseViewController {
     var navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     
     var infoCell = "InfoCell"
+    var complaintsCell = "ComplaintsCell"
     
     var backBtn: UIButton = {
         var b = UIButton()
@@ -36,13 +37,12 @@ class ComplaintsViewController: BaseViewController {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-//        layout.sectionHeadersPinToVisibleBounds = false
-//        layout.minimumInteritemSpacing = UI.Metric.itemSpacing
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
-        cv.backgroundColor = .red
+        cv.backgroundColor = .lightGray
         cv.delegate = self
         cv.dataSource = self
         cv.register(InfoCell.self, forCellWithReuseIdentifier: self.infoCell)
+        cv.register(ComplaintsCell.self, forCellWithReuseIdentifier: self.complaintsCell)
 //        cv.register(GADCell.self, forCellWithReuseIdentifier: self.gadCell)
 //        cv.register(MainCell.self, forCellWithReuseIdentifier: self.mainCell)
 //        cv.register(MainChannelCell.self, forCellWithReuseIdentifier: self.mainChannelCell)
@@ -107,21 +107,39 @@ class ComplaintsViewController: BaseViewController {
 extension ComplaintsViewController: UICollectionViewDelegate {}
 extension ComplaintsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.infoCell, for: indexPath) as! InfoCell
+            cell.delegate = self
+            cell.locationLabel.text = "\(self.lineNumber) - \(self.trainNumber)호"
+            return cell
+        }else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.complaintsCell, for: indexPath) as! ComplaintsCell
             return cell
         }
-        return UICollectionViewCell()
     }
 }
 
 extension ComplaintsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: 200)
+        if indexPath.row == 0 {
+            return CGSize(width: self.view.bounds.width, height: 200)
+        }else {
+            return CGSize(width: self.view.bounds.width, height: self.view.bounds.height - 114 - 200 - 44)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+}
+
+extension ComplaintsViewController: InfoCellProtocol {
+    func clickTrain(_ tag: Int) {
+        print("fjdfjdskfjsdk = \(tag)")
     }
 }
