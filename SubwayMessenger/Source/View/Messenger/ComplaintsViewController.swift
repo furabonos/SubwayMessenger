@@ -139,7 +139,7 @@ extension ComplaintsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ComplaintsViewController: InfoCellProtocol {
-    func clickTrain(_ tag: Int) {
-        print("fjdfjdskfjsdk = \(tag)")
+    func clickTrain(_ tag: Int, _ cell: InfoCell) {
+        cell.locationLabel.text = "\(self.lineNumber) - \(self.trainNumber)호 - \(Int(tag) + 1)번째 칸"
     }
 }

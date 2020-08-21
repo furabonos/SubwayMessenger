@@ -9,7 +9,7 @@
 import UIKit
 
 protocol InfoCellProtocol {
-    func clickTrain(_ tag: Int)
+    func clickTrain(_ tag: Int, _ cell: InfoCell)
 }
 
 class InfoCell: BaseCollectionViewCell {
@@ -18,7 +18,7 @@ class InfoCell: BaseCollectionViewCell {
     
     var btnView: UIView = {
         var v = UIView()
-        v.backgroundColor = .green
+        v.backgroundColor = .white
         return v
     }()
     
@@ -43,7 +43,7 @@ class InfoCell: BaseCollectionViewCell {
     var locationLabel: UILabel = {
         var l = UILabel()
         l.textColor = .black
-        l.backgroundColor = .lightGray
+        l.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
         l.textAlignment = .center
 //        l.font = .boldSystemFont(ofSize: 13)
         return l
@@ -100,7 +100,7 @@ class InfoCell: BaseCollectionViewCell {
     }
     
     @objc func selectTrain(_ sender: UIButton) {
-        delegate?.clickTrain(sender.tag)
+        delegate?.clickTrain(sender.tag, self)
     }
     
 }

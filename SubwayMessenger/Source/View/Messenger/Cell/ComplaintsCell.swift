@@ -10,13 +10,26 @@ import UIKit
 
 class ComplaintsCell: BaseCollectionViewCell {
     
+    var warningLabel: UILabel = {
+        var l = UILabel()
+        l.layer.borderColor = UIColor.red.cgColor
+        l.layer.borderWidth = 2
+        l.backgroundColor = .white
+        let attributedString = NSMutableAttributedString(string: "")
+        return l
+    }()
+    
     override func setupUI() {
-        print("Z")
-        self.backgroundColor = .systemPink
+        self.backgroundColor = .white
+        [warningLabel].forEach { self.addSubview($0) }
     }
     
     override func setupConstraints() {
-        print("z")
+        warningLabel.snp.makeConstraints {
+            $0.top.leading.equalToSuperview().offset(10)
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.height.equalTo(100)
+        }
     }
     
 }
