@@ -49,9 +49,15 @@ class InfoCell: BaseCollectionViewCell {
         return l
     }()
     
+    var lineView: UIView = {
+        var v = UIView()
+        v.backgroundColor = .lightGray
+        return v
+    }()
+    
     override func setupUI() {
         self.backgroundColor = .white
-        [btnView, currentLabel, locationLabel].forEach { self.addSubview($0) }
+        [btnView, currentLabel, locationLabel, lineView].forEach { self.addSubview($0) }
         [stackView].forEach { btnView.addSubview($0)}
     }
     
@@ -79,6 +85,11 @@ class InfoCell: BaseCollectionViewCell {
             $0.top.equalTo(currentLabel.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(30)
+        }
+        
+        lineView.snp.makeConstraints {
+            $0.leading.bottom.trailing.equalToSuperview()
+            $0.height.equalTo(10)
         }
     }
     

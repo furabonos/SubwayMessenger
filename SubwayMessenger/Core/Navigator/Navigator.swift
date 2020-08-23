@@ -13,6 +13,7 @@ struct Navigator {
     enum Scene {
         case messenger
         case complaints(lineN: String, trainN: String)
+        case memo(lineN: String, trainN: String)
         case subway
     }
     
@@ -23,6 +24,9 @@ struct Navigator {
             return viewController
         case .complaints(lineN: let lineNumber, trainN: let trainNumber):
             let viewController: ComplaintsViewController = ComplaintsViewController(line: lineNumber, train: trainNumber)
+            return viewController
+        case .memo(lineN: let lineNumber, trainN: let trainNumber):
+            let viewController: MemoViewController = MemoViewController(line: lineNumber, train: trainNumber)
             return viewController
         case .subway:
             let viewController: TestViewController = TestViewController()

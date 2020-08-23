@@ -62,6 +62,7 @@ class MessengerController: BaseViewController {
     
     @objc func sss() {
         self.viewModel.findStation(lats: "37.50848388671875", lons: "127.03744043284128") { (result) in
+//        self.viewModel.findStation(lats: "37.461622", lons: "126.440610") { (result) in
             switch result {
             case "success":
                 self.splitStation()
@@ -93,8 +94,10 @@ class MessengerController: BaseViewController {
             for i in 0..<self.viewModel.stationArr.count {
                 let okAction = UIAlertAction(title: self.viewModel.stationArr[i].name, style: .default) { (action) in
                     guard let titles = action.title else { return }
-                    self.trainLine = ETCMethod.makeStationInfo(str: titles)[1]
-                    self.selectStation(station: ETCMethod.makeStationInfo(str: titles)[0])
+                    ETCMethod.selectLineTel(info: ETCMethod.makeStationInfo(str: titles))
+                    print("느앗 = \(UserDefaults.standard.string(forKey: "number"))")
+//                    self.trainLine = ETCMethod.makeStationInfo(str: titles)[1]
+//                    self.selectStation(station: ETCMethod.makeStationInfo(str: titles)[0])
                 }
                 alert.addAction(okAction)
             }
@@ -113,7 +116,8 @@ class MessengerController: BaseViewController {
         DispatchQueue.main.async {
             for i in 0..<afterSplit.count {
                 let okAction = UIAlertAction(title:"<\(afterSplit[i])>", style: .default) { (action) in
-                    self.navigationController?.pushViewController(self.navigator.navigate(at: .complaints(lineN: self.trainLine, trainN: self.viewModel.schedulrArr[i].btrainNo)), animated: true)
+//                    self.navigationController?.pushViewController(self.navigator.navigate(at: .complaints(lineN: self.trainLine, trainN: self.viewModel.schedulrArr[i].btrainNo)), animated: true)
+                    self.navigationController?.pushViewController(self.navigator.navigate(at: .memo(lineN: self.trainLine, trainN: self.viewModel.schedulrArr[i].btrainNo)), animated: true)
                 }
                 alert.addAction(okAction)
             }

@@ -30,6 +30,38 @@ class ETCMethod {
         }
     }
     
+    static func selectLineTel(info: Array<String>) {
+        var line = info[1]
+        var station = info[0]
+        
+        switch line {
+        case "1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선":
+            stationSel(station: station)
+        case "9호선":
+            UserDefaults.standard.set("seoul", forKey: "number")
+        case "경의중앙선", "분당선", "공항철도":
+            UserDefaults.standard.set("korail", forKey: "number")
+        default:
+            let alert = UIAlertController(title: "안내", message: "현재 해당 철도는 서비스를 지원하지 않고있습니다.꺼져", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alert.addAction(ok)
+            DispatchQueue.main.async {
+                if let topController = UIApplication.topViewController() {
+                    topController.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    static func stationSel(station: String) {
+        switch station {
+        case "서울", "시청", "종각", "종로3가", "종로5가", "동대문", "동묘앞", "신설동", "제기동", "청량리", "대화", "주엽", "정발산", "마두", "백석", "대곡", "화정", "원당", "원흥", "삼송", "지축", "오이도", "정왕", "신길온천", "안산", "초지", "고잔", "중앙", "한대앞", "상록수", "반월", "대야미", "수리산", "산본", "금정", "범계", "평촌", "인덕원", "정부과천청사", "과천", "대공원", "경마공원", "선바위":
+            UserDefaults.standard.set("korail", forKey: "number")
+        default:
+            UserDefaults.standard.set("metro", forKey: "number")
+        }
+    }
+    
     static func makeStationInfo(str: String) -> [String] {
         var strArr = Array<String>()
         var splits = str.components(separatedBy: "역[")

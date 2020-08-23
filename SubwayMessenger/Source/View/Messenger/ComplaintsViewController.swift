@@ -38,7 +38,7 @@ class ComplaintsViewController: BaseViewController {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
-        cv.backgroundColor = .lightGray
+        cv.backgroundColor = .white
         cv.delegate = self
         cv.dataSource = self
         cv.register(InfoCell.self, forCellWithReuseIdentifier: self.infoCell)

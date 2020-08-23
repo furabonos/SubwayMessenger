@@ -21,6 +21,9 @@
 		8791C18524ED5C21002E5732 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18424ED5C21002E5732 /* InfoCell.swift */; };
 		8791C18724ED5C70002E5732 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */; };
 		8791C18924EEB0A0002E5732 /* ComplaintsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18824EEB0A0002E5732 /* ComplaintsCell.swift */; };
+		8791C18B24F0D9CE002E5732 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18A24F0D9CE002E5732 /* MemoViewController.swift */; };
+		8791C18D24F234BE002E5732 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18C24F234BE002E5732 /* Extension.swift */; };
+		8791C18F24F2390F002E5732 /* TrainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18E24F2390F002E5732 /* TrainModel.swift */; };
 		87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304D24DAD76700810364 /* BaseViewController.swift */; };
 		87A2305024DAD87500810364 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304F24DAD87500810364 /* TabbarController.swift */; };
 		87A2305424DAD92800810364 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2305324DAD92800810364 /* MessengerController.swift */; };
@@ -49,6 +52,9 @@
 		8791C18424ED5C21002E5732 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8791C18824EEB0A0002E5732 /* ComplaintsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsCell.swift; sourceTree = "<group>"; };
+		8791C18A24F0D9CE002E5732 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		8791C18C24F234BE002E5732 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		8791C18E24F2390F002E5732 /* TrainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainModel.swift; sourceTree = "<group>"; };
 		87A2304D24DAD76700810364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		87A2304F24DAD87500810364 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		87A2305324DAD92800810364 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 				567943A624DA3B8100F258C3 /* Assets.xcassets */,
 				870034B724DFC6420038A8BD /* URLReq.swift */,
 				870034BB24DFD1B60038A8BD /* ETCMethod.swift */,
+				8791C18C24F234BE002E5732 /* Extension.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 				87A2305324DAD92800810364 /* MessengerController.swift */,
 				870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */,
 				87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */,
+				8791C18A24F0D9CE002E5732 /* MemoViewController.swift */,
 				8791C18324ED5B28002E5732 /* Cell */,
 			);
 			path = Messenger;
@@ -209,6 +217,7 @@
 		87C60CF024DFC15200B5A197 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				8791C18E24F2390F002E5732 /* TrainModel.swift */,
 				87C60CEA24DC3D3F00B5A197 /* StationModel.swift */,
 				87C60CEC24DC3D5F00B5A197 /* ScheduleModel.swift */,
 			);
@@ -355,13 +364,16 @@
 				8791C18524ED5C21002E5732 /* InfoCell.swift in Sources */,
 				5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */,
 				8791C18724ED5C70002E5732 /* BaseCollectionViewCell.swift in Sources */,
+				8791C18B24F0D9CE002E5732 /* MemoViewController.swift in Sources */,
 				870034BC24DFD1B60038A8BD /* ETCMethod.swift in Sources */,
 				567943BD24DA423D00F258C3 /* Service.swift in Sources */,
 				870034BA24DFC67E0038A8BD /* Result.swift in Sources */,
 				8791C18924EEB0A0002E5732 /* ComplaintsCell.swift in Sources */,
 				87C60CEB24DC3D3F00B5A197 /* StationModel.swift in Sources */,
 				567943B624DA40E300F258C3 /* Navigator.swift in Sources */,
+				8791C18D24F234BE002E5732 /* Extension.swift in Sources */,
 				870034BE24E17A5F0038A8BD /* MessengerViewModel.swift in Sources */,
+				8791C18F24F2390F002E5732 /* TrainModel.swift in Sources */,
 				567943BF24DA425000F258C3 /* TestViewController.swift in Sources */,
 				87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */,
 				87C60CEF24DFC14A00B5A197 /* MessengerService.swift in Sources */,
