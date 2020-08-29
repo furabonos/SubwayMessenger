@@ -7,20 +7,22 @@
 //
 
 import UIKit
+import MessageUI
 
 class MemoViewController: BaseViewController {
     
     var lineNumber: String
     var trainNumber: String
+    var telNumner = ""
     
     var navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     
     var backBtn: UIButton = {
         var b = UIButton()
         b.setImage(UIImage(named: "backIcon"), for: .normal)
-        b.imageView?.contentMode = .scaleAspectFit
-//        b.addTarget(self, action: #selector(backClick), for: .touchUpInside)
-        b.backgroundColor = .red
+//        b.imageView?.contentMode = .scaleAspectFit
+        b.addTarget(self, action: #selector(backClick), for: .touchUpInside)
+        b.backgroundColor = .white
         b.frame = CGRect(x: 0, y: 0, width: 20, height: 10)
         return b
     }()
@@ -98,12 +100,14 @@ class MemoViewController: BaseViewController {
     var sendBtn: UIButton = {
         var b = UIButton()
         b.backgroundColor = .red
+        b.addTarget(self, action: #selector(sendMessege), for: .touchUpInside)
         return b
     }()
     
     var sendBtn2: UIButton = {
         var b = UIButton()
         b.backgroundColor = .red
+        b.addTarget(self, action: #selector(sendMessege), for: .touchUpInside)
         return b
     }()
     
@@ -128,6 +132,11 @@ class MemoViewController: BaseViewController {
         [stackView, markerView, locationView, warningLabel, textView, sendBtn, sendBtn2].forEach { self.view.addSubview($0) }
         [currentLabel, locationLabel].forEach { locationView.addSubview($0) }
         self.placeholderSetting()
+        if UserDefaults.standard.string(forKey: "number") == "seoul" {
+            print("으아! = \(Train.shared.seoulMetro)")
+        }else if UserDefaults.standard.string(forKey: "number") == "" {
+            
+        }
     }
     
     override func setupConstraints() {
@@ -195,6 +204,10 @@ class MemoViewController: BaseViewController {
         let barvv = UIBarButtonItem(customView: backBtn)
         let navItem = UINavigationItem(title: "")
         navItem.leftBarButtonItem = barvv
+        NSLayoutConstraint.activate([
+            (barvv.customView!.widthAnchor.constraint(equalToConstant: 20)),
+            (barvv.customView!.heightAnchor.constraint(equalToConstant: 20))
+        ])
         navBar.setItems([navItem], animated: false)
         self.view.addSubview(navBar)
         navBar.snp.makeConstraints {
@@ -236,6 +249,23 @@ class MemoViewController: BaseViewController {
         textView.text = "접수하실 민원을 입력해 주세요."
         textView.textColor = UIColor.lightGray
     }
+    
+    @objc func backClick() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func sendMessege() {
+        guard MFMessageComposeViewController.canSendText() else {
+            print("cant send")
+            return
+        }
+        let composeViewController = MFMessageComposeViewController()
+        composeViewController.messageComposeDelegate = self
+        composeViewController.recipients = [Train.shared.seoulMetro]
+        composeViewController.body = textView.text
+        
+        present(composeViewController, animated: true)
+    }
 
 }
 
@@ -255,4 +285,20 @@ extension MemoViewController: UITextViewDelegate {
         }
     }
     
+}
+
+extension MemoViewController: MFMessageComposeViewControllerDelegate {
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled:
+            dismiss(animated: true, completion: nil)
+        case .sent:
+            dismiss(animated: true, completion: nil)
+        case .failed:
+            dismiss(animated: true, completion: nil)
+        default:
+            dismiss(animated: true, completion: nil)
+        }
+    }
 }

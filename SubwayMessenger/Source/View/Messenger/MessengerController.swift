@@ -95,9 +95,9 @@ class MessengerController: BaseViewController {
                 let okAction = UIAlertAction(title: self.viewModel.stationArr[i].name, style: .default) { (action) in
                     guard let titles = action.title else { return }
                     ETCMethod.selectLineTel(info: ETCMethod.makeStationInfo(str: titles))
-                    print("느앗 = \(UserDefaults.standard.string(forKey: "number"))")
-//                    self.trainLine = ETCMethod.makeStationInfo(str: titles)[1]
-//                    self.selectStation(station: ETCMethod.makeStationInfo(str: titles)[0])
+//                    print("느앗 = \(UserDefaults.standard.string(forKey: "number"))")
+                    self.trainLine = ETCMethod.makeStationInfo(str: titles)[1]
+                    self.selectStation(station: ETCMethod.makeStationInfo(str: titles)[0])
                 }
                 alert.addAction(okAction)
             }
