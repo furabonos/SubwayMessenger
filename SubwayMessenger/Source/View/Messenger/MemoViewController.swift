@@ -134,8 +134,10 @@ class MemoViewController: BaseViewController {
         self.placeholderSetting()
         if UserDefaults.standard.string(forKey: "number") == "seoul" {
             print("으아! = \(Train.shared.seoulMetro)")
-        }else if UserDefaults.standard.string(forKey: "number") == "" {
-            
+        }else if UserDefaults.standard.string(forKey: "number") == "metro" {
+            print(Train.shared.metro)
+        }else if UserDefaults.standard.string(forKey: "number") == "korail" {
+            print(Train.shared.korail)
         }
     }
     

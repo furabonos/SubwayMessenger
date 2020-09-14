@@ -14,7 +14,7 @@ class TabbarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let firstView = navigator.navigate(at: .messenger)
+        let firstView = navigator.navigate(at: .send)
         let secondView = navigator.navigate(at: .subway)
         let tabList = [firstView, secondView]
         tabList[0].title = "messenger"

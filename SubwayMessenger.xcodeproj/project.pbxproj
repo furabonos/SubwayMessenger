@@ -27,7 +27,9 @@
 		87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304D24DAD76700810364 /* BaseViewController.swift */; };
 		87A2305024DAD87500810364 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2304F24DAD87500810364 /* TabbarController.swift */; };
 		87A2305424DAD92800810364 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2305324DAD92800810364 /* MessengerController.swift */; };
+		87AA48FF250FA09A00858DA1 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AA48FE250FA09A00858DA1 /* SendViewController.swift */; };
 		87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */; };
+		87B9973224FB7EDB0052EB9F /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B9973124FB7EDB0052EB9F /* Memo.swift */; };
 		87C60CEB24DC3D3F00B5A197 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEA24DC3D3F00B5A197 /* StationModel.swift */; };
 		87C60CED24DC3D5F00B5A197 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEC24DC3D5F00B5A197 /* ScheduleModel.swift */; };
 		87C60CEF24DFC14A00B5A197 /* MessengerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEE24DFC14A00B5A197 /* MessengerService.swift */; };
@@ -58,7 +60,9 @@
 		87A2304D24DAD76700810364 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		87A2304F24DAD87500810364 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		87A2305324DAD92800810364 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
+		87AA48FE250FA09A00858DA1 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsViewController.swift; sourceTree = "<group>"; };
+		87B9973124FB7EDB0052EB9F /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		87C60CEA24DC3D3F00B5A197 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
 		87C60CEC24DC3D5F00B5A197 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		87C60CEE24DFC14A00B5A197 /* MessengerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerService.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				870034B724DFC6420038A8BD /* URLReq.swift */,
 				870034BB24DFD1B60038A8BD /* ETCMethod.swift */,
 				8791C18C24F234BE002E5732 /* Extension.swift */,
+				87B9973124FB7EDB0052EB9F /* Memo.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */,
 				87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */,
 				8791C18A24F0D9CE002E5732 /* MemoViewController.swift */,
+				87AA48FE250FA09A00858DA1 /* SendViewController.swift */,
 				8791C18324ED5B28002E5732 /* Cell */,
 			);
 			path = Messenger;
@@ -361,6 +367,7 @@
 				87A2305424DAD92800810364 /* MessengerController.swift in Sources */,
 				87A2305024DAD87500810364 /* TabbarController.swift in Sources */,
 				87C60CED24DC3D5F00B5A197 /* ScheduleModel.swift in Sources */,
+				87AA48FF250FA09A00858DA1 /* SendViewController.swift in Sources */,
 				8791C18524ED5C21002E5732 /* InfoCell.swift in Sources */,
 				5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */,
 				8791C18724ED5C70002E5732 /* BaseCollectionViewCell.swift in Sources */,
@@ -373,6 +380,7 @@
 				567943B624DA40E300F258C3 /* Navigator.swift in Sources */,
 				8791C18D24F234BE002E5732 /* Extension.swift in Sources */,
 				870034BE24E17A5F0038A8BD /* MessengerViewModel.swift in Sources */,
+				87B9973224FB7EDB0052EB9F /* Memo.swift in Sources */,
 				8791C18F24F2390F002E5732 /* TrainModel.swift in Sources */,
 				567943BF24DA425000F258C3 /* TestViewController.swift in Sources */,
 				87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */,

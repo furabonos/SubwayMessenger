@@ -15,6 +15,7 @@ struct Navigator {
         case complaints(lineN: String, trainN: String)
         case memo(lineN: String, trainN: String)
         case subway
+        case send
     }
     
     func navigate(at scene: Scene) -> UIViewController {
@@ -30,6 +31,9 @@ struct Navigator {
             return viewController
         case .subway:
             let viewController: TestViewController = TestViewController()
+            return viewController
+        case .send:
+            let viewController = SendViewController()
             return viewController
         }
     }
