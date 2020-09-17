@@ -119,6 +119,7 @@ class SendViewController: BaseViewController {
                 let okAction = UIAlertAction(title:"<\(afterSplit[i])>", style: .default) { (action) in
 ////                    self.navigationController?.pushViewController(self.navigator.navigate(at: .complaints(lineN: self.trainLine, trainN: self.viewModel.schedulrArr[i].btrainNo)), animated: true)
 //                    self.navigationController?.pushViewController(self.navigator.navigate(at: .memo(lineN: self.trainLine, trainN: self.viewModel.schedulrArr[i].btrainNo)), animated: true)
+                    [self.trainBtn, self.bubbleView, self.clickMent].forEach { $0.isHidden = true }
                     print("몇호선 = \(self.trainLine), \(self.viewModel.schedulrArr[i].btrainNo) ")
                 }
                 alert.addAction(okAction)
