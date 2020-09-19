@@ -206,10 +206,10 @@
 			children = (
 				87A2305324DAD92800810364 /* MessengerController.swift */,
 				870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */,
-				87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */,
 				8791C18A24F0D9CE002E5732 /* MemoViewController.swift */,
 				87AA48FE250FA09A00858DA1 /* SendViewController.swift */,
 				565C400825133A240083150E /* SendViewModel.swift */,
+				87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */,
 				8791C18324ED5B28002E5732 /* Cell */,
 			);
 			path = Messenger;
@@ -534,7 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6DKSMCWLJ;
+				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				INFOPLIST_FILE = SubwayMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

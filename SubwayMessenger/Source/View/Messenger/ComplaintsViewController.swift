@@ -13,42 +13,66 @@ class ComplaintsViewController: BaseViewController {
     var lineNumber: String
     var trainNumber: String
     
-    var navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    
-    var infoCell = "InfoCell"
-    var complaintsCell = "ComplaintsCell"
-    
     var backBtn: UIButton = {
         var b = UIButton()
-        b.setImage(UIImage(named: "backIcon"), for: .normal)
-        b.addTarget(self, action: #selector(backClick), for: .touchUpInside)
-        b.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        b.setImage(UIImage(named: "iconBack"), for: .normal)
+        b.addTarget(self, action: #selector(clickBack), for: .touchUpInside)
         return b
     }()
     
-    var sendBtn: UIButton = {
+    var infoView: UIView = {
+        var v = UIView()
+        v.backgroundColor = .white
+        v.layer.cornerRadius = 10
+        v.layer.shadowColor = UIColor.black.cgColor
+        v.layer.shadowOffset = CGSize(width: 1, height: 1)
+        v.layer.shadowOpacity = 0.8
+        v.layer.shadowRadius = 4.0
+        v.layer.masksToBounds = false
+        return v
+    }()
+    
+    lazy var infoLabel: UILabel = {
+        var l = UILabel()
+        l.backgroundColor = .white
+        l.textColor = .black
+        l.text = "\(self.lineNumber) - \(self.trainNumber)호"
+        l.textAlignment = .center
+        return l
+    }()
+    
+    var trainView: UIView = {
+        var v = UIView()
+        v.backgroundColor = .white
+        v.layer.cornerRadius = 10
+        v.layer.shadowColor = UIColor.black.cgColor
+        v.layer.shadowOffset = CGSize(width: 1, height: 1)
+        v.layer.shadowOpacity = 0.8
+        v.layer.shadowRadius = 4.0
+        v.layer.masksToBounds = false
+        return v
+    }()
+    
+    var leftBtn: UIButton = {
         var b = UIButton()
-        b.backgroundColor = .brown
-        b.setTitle("전송", for: .normal)
-        b.setTitleColor(.white, for: .normal)
-        b.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        b.setImage(UIImage(named: "leftArrow"), for: .normal)
         return b
     }()
     
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
-        cv.backgroundColor = .white
-        cv.delegate = self
-        cv.dataSource = self
-        cv.register(InfoCell.self, forCellWithReuseIdentifier: self.infoCell)
-        cv.register(ComplaintsCell.self, forCellWithReuseIdentifier: self.complaintsCell)
-//        cv.register(GADCell.self, forCellWithReuseIdentifier: self.gadCell)
-//        cv.register(MainCell.self, forCellWithReuseIdentifier: self.mainCell)
-//        cv.register(MainChannelCell.self, forCellWithReuseIdentifier: self.mainChannelCell)
-//        cv.register(MiniGADCell.self, forCellWithReuseIdentifier: self.miniGadCell)
-    //        cv.register(MainNoticeCell.self, forCellWithReuseIdentifier: self.mainNoticeCell)
-         return cv
+    var rightBtn: UIButton = {
+        var b = UIButton()
+        b.setImage(UIImage(named: "rightArrow"), for: .normal)
+        return b
+    }()
+    
+    var testBtn: UIButton = {
+        var b = UIButton()
+//        b.setImage(UIImage(named: "trains1"), for: .normal)
+        b.setBackgroundImage(UIImage(named: "trains1"), for: .normal)
+        b.setTitle("1", for: .normal)
+        b.setTitleColor(.black, for: .normal)
+        b.titleLabel?.font = .systemFont(ofSize: 12)
+        return b
     }()
     
     init(line: String, train: String) {
@@ -62,84 +86,68 @@ class ComplaintsViewController: BaseViewController {
     }
 
     override func viewDidLoad() {
-//        self.view.backgroundColor = .white
-        print("zzzzzzz = \(self.lineNumber), \(trainNumber)")
         super.viewDidLoad()
+        self.view.backgroundColor = .white
     }
     
     override func setupUI() {
-        self.setNavigationBar()
-        [sendBtn, collectionView].forEach { self.view.addSubview($0) }
+        [backBtn, infoView, trainView].forEach { self.view.addSubview($0) }
+        [infoLabel].forEach { infoView.addSubview($0) }
+        [leftBtn, rightBtn, testBtn].forEach { trainView.addSubview($0) }
     }
     
     override func setupConstraints() {
-        sendBtn.snp.makeConstraints {
-            $0.bottom.leading.trailing.equalToSuperview()
-            $0.height.equalTo(70)
+        backBtn.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin).offset(14)
+            $0.leading.equalToSuperview().offset(20)
+            $0.width.height.equalTo(30)
         }
-        collectionView.snp.makeConstraints {
-            $0.top.equalTo(navBar.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(sendBtn.snp.top)
+        
+        infoView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(backBtn.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(100)
         }
+        
+        infoLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(50)
+        }
+        
+        trainView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(infoView.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(100)
+        }
+        
+        leftBtn.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+            $0.width.height.equalTo(20)
+        }
+        
+        rightBtn.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.width.height.equalTo(20)
+        }
+        
+        testBtn.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(50)
+        }
+        
+        
     }
     
-    @objc func backClick() {
+    @objc func clickBack() {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    func setNavigationBar() {
-        navBar.barTintColor = .white
-        let barvv = UIBarButtonItem(customView: backBtn)
-        let navItem = UINavigationItem(title: "")
-        navItem.leftBarButtonItem = barvv
-        navBar.setItems([navItem], animated: false)
-        self.view.addSubview(navBar)
-        navBar.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(44)
-        }
-    }
 
-}
-
-extension ComplaintsViewController: UICollectionViewDelegate {}
-extension ComplaintsViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.infoCell, for: indexPath) as! InfoCell
-            cell.delegate = self
-            cell.locationLabel.text = "\(self.lineNumber) - \(self.trainNumber)호"
-            return cell
-        }else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.complaintsCell, for: indexPath) as! ComplaintsCell
-            return cell
-        }
-    }
-}
-
-extension ComplaintsViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 0 {
-            return CGSize(width: self.view.bounds.width, height: 200)
-        }else {
-            return CGSize(width: self.view.bounds.width, height: self.view.bounds.height - 114 - 200 - 44)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-}
-
-extension ComplaintsViewController: InfoCellProtocol {
-    func clickTrain(_ tag: Int, _ cell: InfoCell) {
-        cell.locationLabel.text = "\(self.lineNumber) - \(self.trainNumber)호 - \(Int(tag) + 1)번째 칸"
-    }
 }

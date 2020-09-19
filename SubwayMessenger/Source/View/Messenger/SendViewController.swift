@@ -57,7 +57,9 @@ class SendViewController: BaseViewController {
         }
         
         clickMent.snp.makeConstraints {
-            $0.center.equalTo(bubbleView.snp.center)
+//            $0.center.equalTo(bubbleView.snp.center)
+            $0.centerY.equalTo(bubbleView.snp.centerY).offset(5)
+            $0.centerX.equalTo(bubbleView.snp.centerX).offset(5)
             $0.width.equalTo(60)
             $0.height.equalTo(40)
         }
@@ -117,10 +119,7 @@ class SendViewController: BaseViewController {
         DispatchQueue.main.async {
             for i in 0..<afterSplit.count {
                 let okAction = UIAlertAction(title:"<\(afterSplit[i])>", style: .default) { (action) in
-////                    self.navigationController?.pushViewController(self.navigator.navigate(at: .complaints(lineN: self.trainLine, trainN: self.viewModel.schedulrArr[i].btrainNo)), animated: true)
-//                    self.navigationController?.pushViewController(self.navigator.navigate(at: .memo(lineN: self.trainLine, trainN: self.viewModel.schedulrArr[i].btrainNo)), animated: true)
-                    [self.trainBtn, self.bubbleView, self.clickMent].forEach { $0.isHidden = true }
-                    print("몇호선 = \(self.trainLine), \(self.viewModel.schedulrArr[i].btrainNo) ")
+                    self.navigationController?.pushViewController(self.navigator.navigate(at: .complaints(lineN: self.trainLine, trainN: self.viewModel.schedulrArr[i].btrainNo)), animated: true)
                 }
                 alert.addAction(okAction)
             }
