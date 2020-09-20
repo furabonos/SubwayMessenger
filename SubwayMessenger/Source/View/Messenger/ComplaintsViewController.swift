@@ -36,7 +36,7 @@ class ComplaintsViewController: BaseViewController {
         var l = UILabel()
         l.backgroundColor = .white
         l.textColor = .black
-        l.text = "\(self.lineNumber) - \(self.trainNumber)호"
+        l.text = "\(self.lineNumber) - \(self.trainNumber)호 - 1번째 칸"
         l.textAlignment = .center
         return l
     }()
@@ -56,22 +56,26 @@ class ComplaintsViewController: BaseViewController {
     var leftBtn: UIButton = {
         var b = UIButton()
         b.setImage(UIImage(named: "leftArrow"), for: .normal)
+        b.tag = 0
+        b.addTarget(self, action: #selector(selectContainer(_:)), for: .touchUpInside)
         return b
     }()
     
     var rightBtn: UIButton = {
         var b = UIButton()
         b.setImage(UIImage(named: "rightArrow"), for: .normal)
+        b.tag = 1
+        b.addTarget(self, action: #selector(selectContainer(_:)), for: .touchUpInside)
         return b
     }()
     
-    var testBtn: UIButton = {
+    var trainBtn: UIButton = {
         var b = UIButton()
-//        b.setImage(UIImage(named: "trains1"), for: .normal)
-        b.setBackgroundImage(UIImage(named: "trains1"), for: .normal)
+        b.setBackgroundImage(UIImage(named: "trainPlatform"), for: .normal)
         b.setTitle("1", for: .normal)
         b.setTitleColor(.black, for: .normal)
-        b.titleLabel?.font = .systemFont(ofSize: 12)
+        b.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        b.titleEdgeInsets = UIEdgeInsets(top: 0, left: -40, bottom: 0, right: 0)
         return b
     }()
     
@@ -93,7 +97,7 @@ class ComplaintsViewController: BaseViewController {
     override func setupUI() {
         [backBtn, infoView, trainView].forEach { self.view.addSubview($0) }
         [infoLabel].forEach { infoView.addSubview($0) }
-        [leftBtn, rightBtn, testBtn].forEach { trainView.addSubview($0) }
+        [leftBtn, rightBtn, trainBtn].forEach { trainView.addSubview($0) }
     }
     
     override func setupConstraints() {
@@ -138,9 +142,9 @@ class ComplaintsViewController: BaseViewController {
             $0.width.height.equalTo(20)
         }
         
-        testBtn.snp.makeConstraints {
+        trainBtn.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.height.equalTo(50)
+            $0.width.height.equalTo(80)
         }
         
         
@@ -148,6 +152,27 @@ class ComplaintsViewController: BaseViewController {
     
     @objc func clickBack() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func selectContainer(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            var titles = Int(trainBtn.title(for: .normal)!)!
+            if titles != 1 {
+                titles -= 1
+                trainBtn.setTitle("\(titles)", for: .normal)
+                self.infoLabel.text = "\(self.lineNumber) - \(self.trainNumber)호 - \(titles)번째 칸"
+            }
+        case 1:
+            var titles = Int(trainBtn.title(for: .normal)!)!
+            if titles <= 9 {
+                titles += 1
+                trainBtn.setTitle("\(titles)", for: .normal)
+                self.infoLabel.text = "\(self.lineNumber) - \(self.trainNumber)호 - \(titles)번째 칸"
+            }
+        default:
+            print("none")
+        }
     }
 
 }
