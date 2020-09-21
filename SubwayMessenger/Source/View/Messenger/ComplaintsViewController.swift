@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 class ComplaintsViewController: BaseViewController {
     
@@ -79,6 +80,49 @@ class ComplaintsViewController: BaseViewController {
         return b
     }()
     
+    var selectView: UIView = {
+        var v = UIView()
+        v.backgroundColor = .white
+        v.layer.cornerRadius = 10
+        v.layer.shadowColor = UIColor.black.cgColor
+        v.layer.shadowOffset = CGSize(width: 1, height: 1)
+        v.layer.shadowOpacity = 0.8
+        v.layer.shadowRadius = 4.0
+        v.layer.masksToBounds = false
+        return v
+    }()
+    
+    var selectBtn: UIButton = {
+        var b = UIButton()
+        b.setTitle("민원의 종류를 선택해주세요", for: .normal)
+        b.setTitleColor(.black, for: .normal)
+        b.backgroundColor = .white
+        b.addTarget(self, action: #selector(selectCom), for: .touchUpInside)
+        return b
+    }()
+    
+    let dropDown = DropDown()
+    
+    var complaintsView: UIView = {
+        var v = UIView()
+        v.backgroundColor = .white
+        v.layer.cornerRadius = 10
+        v.layer.shadowColor = UIColor.black.cgColor
+        v.layer.shadowOffset = CGSize(width: 1, height: 1)
+        v.layer.shadowOpacity = 0.8
+        v.layer.shadowRadius = 4.0
+        v.layer.masksToBounds = false
+        return v
+    }()
+    
+    lazy var complaintsField: UITextView = {
+        var tv = UITextView()
+        tv.delegate = self
+        tv.backgroundColor = .red
+        tv.textColor = .black
+        return tv
+    }()
+    
     init(line: String, train: String) {
         self.lineNumber = line
         self.trainNumber = train
@@ -88,16 +132,31 @@ class ComplaintsViewController: BaseViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+          self.view.endEditing(true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        dropDown.anchorView = selectBtn
+        dropDown.dataSource = ["온도관련", "마스크 미착용", "소란, 난동", "이동상인", "응급환자", "테러"]
+        dropDown.width = self.view.bounds.width - 80
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.selectBtn.setTitle(item, for: .normal)
+        }
+        textViewSetupView()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func setupUI() {
-        [backBtn, infoView, trainView].forEach { self.view.addSubview($0) }
+        [backBtn, infoView, trainView, selectView, complaintsView].forEach { self.view.addSubview($0) }
         [infoLabel].forEach { infoView.addSubview($0) }
         [leftBtn, rightBtn, trainBtn].forEach { trainView.addSubview($0) }
+        [selectBtn].forEach { selectView.addSubview($0) }
+        [complaintsField].forEach { complaintsView.addSubview($0) }
     }
     
     override func setupConstraints() {
@@ -147,6 +206,34 @@ class ComplaintsViewController: BaseViewController {
             $0.width.height.equalTo(80)
         }
         
+        selectView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(trainView.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(100)
+        }
+        
+        selectBtn.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(50)
+        }
+        
+        complaintsView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(selectView.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(200)
+        }
+        
+        complaintsField.snp.makeConstraints {
+            $0.top.leading.equalToSuperview().offset(10)
+            $0.trailing.bottom.equalToSuperview().offset(-10)
+        }
+        
         
     }
     
@@ -174,5 +261,38 @@ class ComplaintsViewController: BaseViewController {
             print("none")
         }
     }
+    
+    @objc func selectCom() {
+        dropDown.show()
+    }
+    
+    func textViewSetupView() {
+        complaintsField.text = "this is placeholder"
+        complaintsField.textColor = .lightGray
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        self.view.frame.origin.y = -150
+    }
+        
+    @objc func keyboardWillHide(_ notification: Notification) {
+        self.view.frame.origin.y = 0
+    }
 
+}
+
+extension ComplaintsViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if self.complaintsField.textColor == UIColor.lightGray {
+            self.complaintsField.text = nil
+            self.complaintsField.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if self.complaintsField.text.isEmpty {
+            self.complaintsField.text = "this is placeholder"
+            self.complaintsField.textColor = UIColor.lightGray
+        }
+    }
 }

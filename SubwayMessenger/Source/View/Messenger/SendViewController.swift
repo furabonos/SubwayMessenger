@@ -27,9 +27,11 @@ class SendViewController: BaseViewController {
         return iv
     }()
     
-    var clickMent: UIImageView = {
-        var iv = UIImageView()
-        iv.image = UIImage(named: "click2")
+    var clickMent: UIButton = {
+        var iv = UIButton()
+//        iv.image = UIImage(named: "click2")
+        iv.setImage(UIImage(named: "click2"), for: .normal)
+        iv.addTarget(self, action: #selector(findStation), for: .touchUpInside)
         return iv
     }()
 
