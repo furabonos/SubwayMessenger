@@ -8,8 +8,9 @@
 
 import UIKit
 import DropDown
+import MessageUI
 
-class ComplaintsViewController: BaseViewController {
+class ComplaintsViewController: BaseViewController, MFMessageComposeViewControllerDelegate {
     
     var lineNumber: String
     var trainNumber: String
@@ -118,9 +119,24 @@ class ComplaintsViewController: BaseViewController {
     lazy var complaintsField: UITextView = {
         var tv = UITextView()
         tv.delegate = self
-        tv.backgroundColor = .red
+        tv.backgroundColor = .white
         tv.textColor = .black
         return tv
+    }()
+    
+    var sendBtn: UIButton = {
+        var v = UIButton()
+        v.backgroundColor = .white
+        v.layer.cornerRadius = 10
+        v.layer.shadowColor = UIColor.black.cgColor
+        v.layer.shadowOffset = CGSize(width: 1, height: 1)
+        v.layer.shadowOpacity = 0.8
+        v.layer.shadowRadius = 4.0
+        v.layer.masksToBounds = false
+        v.setTitle("전송", for: .normal)
+        v.setTitleColor(.black, for: .normal)
+        v.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        return v
     }()
     
     init(line: String, train: String) {
@@ -152,7 +168,7 @@ class ComplaintsViewController: BaseViewController {
     }
     
     override func setupUI() {
-        [backBtn, infoView, trainView, selectView, complaintsView].forEach { self.view.addSubview($0) }
+        [backBtn, infoView, trainView, selectView, complaintsView, sendBtn].forEach { self.view.addSubview($0) }
         [infoLabel].forEach { infoView.addSubview($0) }
         [leftBtn, rightBtn, trainBtn].forEach { trainView.addSubview($0) }
         [selectBtn].forEach { selectView.addSubview($0) }
@@ -234,6 +250,13 @@ class ComplaintsViewController: BaseViewController {
             $0.trailing.bottom.equalToSuperview().offset(-10)
         }
         
+        sendBtn.snp.makeConstraints {
+            $0.top.equalTo(complaintsView.snp.bottom).offset(50)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(50)
+        }
+        
         
     }
     
@@ -277,6 +300,31 @@ class ComplaintsViewController: BaseViewController {
         
     @objc func keyboardWillHide(_ notification: Notification) {
         self.view.frame.origin.y = 0
+    }
+    
+    @objc func sendMessage() {
+        guard let numbers = UserDefaults.standard.string(forKey: "number") else { return }
+        var tel = String()
+        if numbers == "seoul" {
+            tel = "1544-4009"
+        }else if numbers == "korail" {
+            tel = "1544-7769"
+        }else if numbers == "metro" {
+            tel = "1577-1234"
+        }
+        print(tel)
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .sent:
+            break
+        case .cancelled:
+            break
+        case .failed:
+            break
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
 
 }
