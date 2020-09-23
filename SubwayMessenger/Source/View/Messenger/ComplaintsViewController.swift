@@ -139,6 +139,12 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
         return v
     }()
     
+    var qmBtn: UIButton = {
+        var b = UIButton()
+        b.setImage(UIImage(named: "questionmark"), for: .normal)
+        return b
+    }()
+    
     init(line: String, train: String) {
         self.lineNumber = line
         self.trainNumber = train
@@ -168,7 +174,7 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
     }
     
     override func setupUI() {
-        [backBtn, infoView, trainView, selectView, complaintsView, sendBtn].forEach { self.view.addSubview($0) }
+        [backBtn, infoView, trainView, selectView, complaintsView, sendBtn, qmBtn].forEach { self.view.addSubview($0) }
         [infoLabel].forEach { infoView.addSubview($0) }
         [leftBtn, rightBtn, trainBtn].forEach { trainView.addSubview($0) }
         [selectBtn].forEach { selectView.addSubview($0) }
@@ -257,6 +263,12 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
             $0.height.equalTo(50)
         }
         
+        qmBtn.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin).offset(14)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.width.height.equalTo(30)
+        }
+        
         
     }
     
@@ -303,6 +315,9 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
     }
     
     @objc func sendMessage() {
+        guard let infoText = self.infoLabel.text else { return }
+        guard let complaintsType = self.selectBtn.title(for: .normal) else { return }
+        guard let complaintsText = self.complaintsField.text else { return }
         guard let numbers = UserDefaults.standard.string(forKey: "number") else { return }
         var tel = String()
         if numbers == "seoul" {
@@ -312,7 +327,24 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
         }else if numbers == "metro" {
             tel = "1577-1234"
         }
-        print(tel)
+        
+        if complaintsType == "민원의 종류를 선택해주세요" {
+            let alertss = UIAlertController(title: "안내", message: "민원의 종류를 선택해주세요.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "확인", style: .default, handler : nil)
+            alertss.addAction(defaultAction)
+            DispatchQueue.main.async {
+                self.present(alertss, animated: true)
+            }
+        }else {
+            let messageComposer = MFMessageComposeViewController()
+            messageComposer.messageComposeDelegate = self
+            if MFMessageComposeViewController.canSendText() {
+                messageComposer.recipients = [tel]
+                messageComposer.body = "[\(self.infoLabel.text!) - \(selectBtn.title(for: .normal)!)]\n\(self.complaintsField.text!)"
+                self.present(messageComposer, animated: true, completion: nil)
+            }
+        }
+        
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {

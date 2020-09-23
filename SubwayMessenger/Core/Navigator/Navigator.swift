@@ -30,7 +30,7 @@ struct Navigator {
             let viewController: MemoViewController = MemoViewController(line: lineNumber, train: trainNumber)
             return viewController
         case .subway:
-            let viewController: TestViewController = TestViewController()
+            let viewController: SubwayViewController = SubwayViewController()
             return viewController
         case .send:
             let viewController = SendViewController()

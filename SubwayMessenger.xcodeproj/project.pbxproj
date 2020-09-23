@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561418B3251B149D00636861 /* SubwayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561418B2251B149D00636861 /* SubwayViewController.swift */; };
 		565C400925133A240083150E /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C400825133A240083150E /* SendViewModel.swift */; };
 		5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679439D24DA3B7F00F258C3 /* AppDelegate.swift */; };
 		567943A524DA3B7F00F258C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A324DA3B7F00F258C3 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		567943AA24DA3B8100F258C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A824DA3B8100F258C3 /* LaunchScreen.storyboard */; };
 		567943B624DA40E300F258C3 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943B524DA40E300F258C3 /* Navigator.swift */; };
 		567943BD24DA423D00F258C3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BC24DA423D00F258C3 /* Service.swift */; };
-		567943BF24DA425000F258C3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567943BE24DA425000F258C3 /* TestViewController.swift */; };
 		870034B824DFC6420038A8BD /* URLReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034B724DFC6420038A8BD /* URLReq.swift */; };
 		870034BA24DFC67E0038A8BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034B924DFC67E0038A8BD /* Result.swift */; };
 		870034BC24DFD1B60038A8BD /* ETCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034BB24DFD1B60038A8BD /* ETCMethod.swift */; };
@@ -39,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubwayMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		561418B2251B149D00636861 /* SubwayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayViewController.swift; sourceTree = "<group>"; };
 		565C400825133A240083150E /* SendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
 		5679439A24DA3B7F00F258C3 /* SubwayMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439D24DA3B7F00F258C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		567943AB24DA3B8100F258C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567943B524DA40E300F258C3 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		567943BC24DA423D00F258C3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		567943BE24DA425000F258C3 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		870034B724DFC6420038A8BD /* URLReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLReq.swift; sourceTree = "<group>"; };
 		870034B924DFC67E0038A8BD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		870034BB24DFD1B60038A8BD /* ETCMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETCMethod.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		87A2305224DAD89E00810364 /* Subway */ = {
 			isa = PBXGroup;
 			children = (
-				567943BE24DA425000F258C3 /* TestViewController.swift */,
+				561418B2251B149D00636861 /* SubwayViewController.swift */,
 			);
 			path = Subway;
 			sourceTree = "<group>";
@@ -374,6 +374,7 @@
 				8791C18524ED5C21002E5732 /* InfoCell.swift in Sources */,
 				5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */,
 				8791C18724ED5C70002E5732 /* BaseCollectionViewCell.swift in Sources */,
+				561418B3251B149D00636861 /* SubwayViewController.swift in Sources */,
 				8791C18B24F0D9CE002E5732 /* MemoViewController.swift in Sources */,
 				870034BC24DFD1B60038A8BD /* ETCMethod.swift in Sources */,
 				567943BD24DA423D00F258C3 /* Service.swift in Sources */,
@@ -386,7 +387,6 @@
 				87B9973224FB7EDB0052EB9F /* Memo.swift in Sources */,
 				8791C18F24F2390F002E5732 /* TrainModel.swift in Sources */,
 				565C400925133A240083150E /* SendViewModel.swift in Sources */,
-				567943BF24DA425000F258C3 /* TestViewController.swift in Sources */,
 				87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */,
 				87C60CEF24DFC14A00B5A197 /* MessengerService.swift in Sources */,
 			);

@@ -34,6 +34,12 @@ class SendViewController: BaseViewController {
         iv.addTarget(self, action: #selector(findStation), for: .touchUpInside)
         return iv
     }()
+    
+    var qmBtn: UIButton = {
+        var b = UIButton()
+        b.setImage(UIImage(named: "questionmark"), for: .normal)
+        return b
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +47,7 @@ class SendViewController: BaseViewController {
     }
     
     override func setupUI() {
-        [trainBtn, bubbleView, clickMent].forEach { self.view.addSubview($0) }
+        [trainBtn, bubbleView, clickMent, qmBtn].forEach { self.view.addSubview($0) }
     }
     
     override func setupConstraints() {
@@ -64,6 +70,12 @@ class SendViewController: BaseViewController {
             $0.centerX.equalTo(bubbleView.snp.centerX).offset(5)
             $0.width.equalTo(60)
             $0.height.equalTo(40)
+        }
+        
+        qmBtn.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin).offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.width.height.equalTo(30)
         }
     }
     
