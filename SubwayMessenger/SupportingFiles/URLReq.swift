@@ -17,4 +17,8 @@ struct API {
         static let findSubway = "https://apis.openapi.sk.com/tmap/pois/search/around"
     }
     
+    struct Subway {
+        static let findStation = ""
+    }
+    
 }

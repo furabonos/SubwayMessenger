@@ -17,6 +17,12 @@ class ETCMethod {
         return scheduleURL
     }
     
+    static func makeStationURL(stations: String, appKey: String) -> URLConvertible {
+        let urls = "http://openapi.seoul.go.kr:8088/\(appKey)/json/SearchInfoBySubwayNameService/1/5/\(stations)"
+        let stationURL = urls.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) as! URLConvertible
+        return stationURL
+    }
+    
     static func selectLineNum(line: Int) -> String {
         switch line {
         case 1, 2, 3, 5, 7, 8, 9, 10:

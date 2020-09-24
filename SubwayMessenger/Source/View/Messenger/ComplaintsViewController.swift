@@ -321,11 +321,11 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
         guard let numbers = UserDefaults.standard.string(forKey: "number") else { return }
         var tel = String()
         if numbers == "seoul" {
-            tel = "1544-4009"
+            tel = Train.shared.seoulMetro
         }else if numbers == "korail" {
-            tel = "1544-7769"
+            tel = Train.shared.korail
         }else if numbers == "metro" {
-            tel = "1577-1234"
+            tel = Train.shared.metro
         }
         
         if complaintsType == "민원의 종류를 선택해주세요" {

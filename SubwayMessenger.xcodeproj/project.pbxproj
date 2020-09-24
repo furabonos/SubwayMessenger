@@ -20,6 +20,7 @@
 		870034BA24DFC67E0038A8BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034B924DFC67E0038A8BD /* Result.swift */; };
 		870034BC24DFD1B60038A8BD /* ETCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034BB24DFD1B60038A8BD /* ETCMethod.swift */; };
 		870034BE24E17A5F0038A8BD /* MessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */; };
+		8755F6F6251CCBAF00161DAA /* SubwayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8755F6F5251CCBAF00161DAA /* SubwayModel.swift */; };
 		8791C18524ED5C21002E5732 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18424ED5C21002E5732 /* InfoCell.swift */; };
 		8791C18724ED5C70002E5732 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */; };
 		8791C18924EEB0A0002E5732 /* ComplaintsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18824EEB0A0002E5732 /* ComplaintsCell.swift */; };
@@ -55,6 +56,7 @@
 		870034B924DFC67E0038A8BD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		870034BB24DFD1B60038A8BD /* ETCMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETCMethod.swift; sourceTree = "<group>"; };
 		870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewModel.swift; sourceTree = "<group>"; };
+		8755F6F5251CCBAF00161DAA /* SubwayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayModel.swift; sourceTree = "<group>"; };
 		8791C18424ED5C21002E5732 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8791C18824EEB0A0002E5732 /* ComplaintsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsCell.swift; sourceTree = "<group>"; };
@@ -181,8 +183,17 @@
 			isa = PBXGroup;
 			children = (
 				87C60CF024DFC15200B5A197 /* Messenger */,
+				8755F6F4251CCB9500161DAA /* Subway */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8755F6F4251CCB9500161DAA /* Subway */ = {
+			isa = PBXGroup;
+			children = (
+				8755F6F5251CCBAF00161DAA /* SubwayModel.swift */,
+			);
+			path = Subway;
 			sourceTree = "<group>";
 		};
 		8791C18324ED5B28002E5732 /* Cell */ = {
@@ -368,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8755F6F6251CCBAF00161DAA /* SubwayModel.swift in Sources */,
 				870034B824DFC6420038A8BD /* URLReq.swift in Sources */,
 				87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */,
 				87A2305424DAD92800810364 /* MessengerController.swift in Sources */,
