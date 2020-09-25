@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		561418B3251B149D00636861 /* SubwayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561418B2251B149D00636861 /* SubwayViewController.swift */; };
 		561418B5251C81E900636861 /* StationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561418B4251C81E900636861 /* StationService.swift */; };
+		5627FA4C251DB52F006B06C2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5627FA4B251DB52F006B06C2 /* SearchViewController.swift */; };
 		565C400925133A240083150E /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C400825133A240083150E /* SendViewModel.swift */; };
 		5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679439D24DA3B7F00F258C3 /* AppDelegate.swift */; };
 		567943A524DA3B7F00F258C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A324DA3B7F00F258C3 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubwayMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561418B2251B149D00636861 /* SubwayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayViewController.swift; sourceTree = "<group>"; };
 		561418B4251C81E900636861 /* StationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationService.swift; sourceTree = "<group>"; };
+		5627FA4B251DB52F006B06C2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		565C400825133A240083150E /* SendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
 		5679439A24DA3B7F00F258C3 /* SubwayMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439D24DA3B7F00F258C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				561418B2251B149D00636861 /* SubwayViewController.swift */,
+				5627FA4B251DB52F006B06C2 /* SearchViewController.swift */,
 			);
 			path = Subway;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				8755F6F6251CCBAF00161DAA /* SubwayModel.swift in Sources */,
 				870034B824DFC6420038A8BD /* URLReq.swift in Sources */,
 				87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */,
+				5627FA4C251DB52F006B06C2 /* SearchViewController.swift in Sources */,
 				87A2305424DAD92800810364 /* MessengerController.swift in Sources */,
 				87A2305024DAD87500810364 /* TabbarController.swift in Sources */,
 				87C60CED24DC3D5F00B5A197 /* ScheduleModel.swift in Sources */,
