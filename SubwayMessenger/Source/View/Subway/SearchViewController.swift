@@ -10,6 +10,8 @@ import UIKit
 
 class SearchViewController: BaseViewController {
     
+    private let searchDetailVC = SearchDetailView()
+    
     var searchView: UIView = {
         var v = UIView()
         v.backgroundColor = .white
@@ -39,6 +41,12 @@ class SearchViewController: BaseViewController {
         tf.addLeftPadding()
         return tf
     }()
+    
+    var exchangeBtn: UIButton = {
+        var b = UIButton()
+        b.setImage(UIImage(named: "exchange"), for: .normal)
+        return b
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +56,7 @@ class SearchViewController: BaseViewController {
     
     override func setupUI() {
         [searchView].forEach { self.view.addSubview($0) }
-        [startTextField, endTextField].forEach { searchView.addSubview($0) }
+        [startTextField, endTextField, exchangeBtn].forEach { searchView.addSubview($0) }
     }
     
     override func setupConstraints() {
@@ -71,6 +79,13 @@ class SearchViewController: BaseViewController {
             $0.trailing.equalToSuperview().offset(-40)
             $0.height.equalTo(35)
         }
+        
+        exchangeBtn.snp.makeConstraints {
+            $0.top.equalTo(startTextField.snp.bottom).offset(-8)
+            $0.leading.equalToSuperview().offset(10)
+            $0.width.height.equalTo(17)
+        }
     }
 
 }
+
