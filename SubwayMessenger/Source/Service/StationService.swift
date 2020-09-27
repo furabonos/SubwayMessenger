@@ -10,20 +10,20 @@ import Foundation
 import Alamofire
 
 protocol StationServiceType {
-    func findSchedule(station: String, completion: @escaping (Result<ScheduleModel>) -> ())
+    func findStation(station: String, completion: @escaping (Result<SubwayModel>) -> ())
 }
 
 struct StationService: StationServiceType {
     
-    func findSchedule(station: String, completion: @escaping (Result<ScheduleModel>) -> ()) {
+    func findStation(station: String, completion: @escaping (Result<SubwayModel>) -> ()) {
         
-        Alamofire.request(ETCMethod.makeScheduleURL(stations: station, appKey: API.openAppKey), method: .get)
+        Alamofire.request(ETCMethod.makeStationURL(stations: station, appKey: API.openAppKey), method: .get)
             .validate()
             .responseData { (response) in
                 switch response.result {
                 case .success(let value) :
                     do {
-                        let decodableValue = try JSONDecoder().decode(ScheduleModel.self, from: value)
+                        let decodableValue = try JSONDecoder().decode(SubwayModel.self, from: value)
                         completion(Result.success(decodableValue))
                     } catch {
                         

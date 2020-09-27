@@ -16,6 +16,8 @@ enum StationType {
 
 class SearchDetailView: UIView {
     
+    private let viewModel = SearchDetailViewModel()
+    
     var backBtn: UIButton = {
         var b = UIButton()
         b.setImage(UIImage(named: "iconBack"), for: .normal)
@@ -27,6 +29,8 @@ class SearchDetailView: UIView {
         var tf = UITextField()
         tf.textColor = .black
         tf.backgroundColor = .white
+        tf.becomeFirstResponder()
+        tf.addTarget(self, action: #selector(valueChange(_:)), for: .editingChanged)
         return tf
     }()
     
@@ -65,7 +69,6 @@ class SearchDetailView: UIView {
             $0.leading.equalTo(backBtn.snp.trailing).offset(10)
             $0.trailing.equalToSuperview().offset(-40)
         }
-        stationTextField.becomeFirstResponder()
         
     }
     
@@ -75,6 +78,21 @@ class SearchDetailView: UIView {
     
     @objc func clickBack() {
         self.removeFromSuperview()
+    }
+    
+    @objc func valueChange(_ textField: UITextField) {
+        guard let stations = textField.text else { return }
+        self.viewModel.findStations(stations: stations) { (result) in
+            switch result {
+            case "success":
+                print("z")
+            case "failure":
+                print("실패")
+            default:
+                print("Z")
+            }
+        }
+        
     }
 
 }

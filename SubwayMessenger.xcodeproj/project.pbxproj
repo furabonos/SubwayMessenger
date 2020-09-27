@@ -23,6 +23,7 @@
 		870034BE24E17A5F0038A8BD /* MessengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */; };
 		8755F6F6251CCBAF00161DAA /* SubwayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8755F6F5251CCBAF00161DAA /* SubwayModel.swift */; };
 		87711CF2251F1332002B5511 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87711CF1251F1332002B5511 /* SearchDetailView.swift */; };
+		87711CF42520A317002B5511 /* SearchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87711CF32520A317002B5511 /* SearchDetailViewModel.swift */; };
 		8791C18524ED5C21002E5732 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18424ED5C21002E5732 /* InfoCell.swift */; };
 		8791C18724ED5C70002E5732 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */; };
 		8791C18924EEB0A0002E5732 /* ComplaintsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791C18824EEB0A0002E5732 /* ComplaintsCell.swift */; };
@@ -61,6 +62,7 @@
 		870034BD24E17A5F0038A8BD /* MessengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewModel.swift; sourceTree = "<group>"; };
 		8755F6F5251CCBAF00161DAA /* SubwayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayModel.swift; sourceTree = "<group>"; };
 		87711CF1251F1332002B5511 /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
+		87711CF32520A317002B5511 /* SearchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewModel.swift; sourceTree = "<group>"; };
 		8791C18424ED5C21002E5732 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		8791C18624ED5C70002E5732 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8791C18824EEB0A0002E5732 /* ComplaintsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsCell.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				561418B2251B149D00636861 /* SubwayViewController.swift */,
 				5627FA4B251DB52F006B06C2 /* SearchViewController.swift */,
 				87711CF1251F1332002B5511 /* SearchDetailView.swift */,
+				87711CF32520A317002B5511 /* SearchDetailViewModel.swift */,
 			);
 			path = Subway;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				87711CF2251F1332002B5511 /* SearchDetailView.swift in Sources */,
 				870034B824DFC6420038A8BD /* URLReq.swift in Sources */,
 				87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */,
+				87711CF42520A317002B5511 /* SearchDetailViewModel.swift in Sources */,
 				5627FA4C251DB52F006B06C2 /* SearchViewController.swift in Sources */,
 				87A2305424DAD92800810364 /* MessengerController.swift in Sources */,
 				87A2305024DAD87500810364 /* TabbarController.swift in Sources */,
