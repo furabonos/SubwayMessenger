@@ -10,36 +10,36 @@ import UIKit
 
 class SearchViewController: BaseViewController {
     
-    private let searchDetailVC = SearchDetailView()
-    
     var searchView: UIView = {
         var v = UIView()
         v.backgroundColor = .white
         return v
     }()
     
-    lazy var startTextField: UITextField = {
-        var tf = UITextField()
-        tf.leftViewMode = .always
-        tf.backgroundColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
-        tf.textColor = .black
-        tf.attributedPlaceholder = NSAttributedString(string: "출발역 입력",
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
-        tf.layer.cornerRadius = 5
-        tf.addLeftPadding()
-        return tf
+    var startTextField: UIButton = {
+        var b = UIButton()
+        b.setTitle("출발역 입력", for: .normal)
+        b.setTitleColor(.gray, for: .normal)
+        b.backgroundColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
+        b.layer.cornerRadius = 5
+        b.contentHorizontalAlignment = .left
+        b.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        b.tag = 0
+        b.addTarget(self, action: #selector(makeDetail(_:)), for: .touchUpInside)
+        return b
     }()
     
-    lazy var endTextField: UITextField = {
-        var tf = UITextField()
-        tf.leftViewMode = .always
-        tf.backgroundColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
-        tf.textColor = .black
-        tf.attributedPlaceholder = NSAttributedString(string: "도착역 입력",
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
-        tf.layer.cornerRadius = 5
-        tf.addLeftPadding()
-        return tf
+    var endTextField: UIButton = {
+        var b = UIButton()
+        b.setTitle("도착역 입력", for: .normal)
+        b.setTitleColor(.gray, for: .normal)
+        b.backgroundColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
+        b.layer.cornerRadius = 5
+        b.contentHorizontalAlignment = .left
+        b.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        b.tag = 1
+        b.addTarget(self, action: #selector(makeDetail(_:)), for: .touchUpInside)
+        return b
     }()
     
     var exchangeBtn: UIButton = {
@@ -84,6 +84,23 @@ class SearchViewController: BaseViewController {
             $0.top.equalTo(startTextField.snp.bottom).offset(-8)
             $0.leading.equalToSuperview().offset(10)
             $0.width.height.equalTo(17)
+        }
+    }
+    
+    @objc func makeDetail(_ sender: UIButton) {
+        var searchDetailVC = SearchDetailView()
+        if sender.tag == 0 {
+            searchDetailVC.stationType = .start
+            self.view.addSubview(searchDetailVC)
+            searchDetailVC.snp.makeConstraints {
+                $0.top.leading.bottom.trailing.equalToSuperview()
+            }
+        }else if sender.tag == 1 {
+            searchDetailVC.stationType = .end
+            self.view.addSubview(searchDetailVC)
+            searchDetailVC.snp.makeConstraints {
+                $0.top.leading.bottom.trailing.equalToSuperview()
+            }
         }
     }
 

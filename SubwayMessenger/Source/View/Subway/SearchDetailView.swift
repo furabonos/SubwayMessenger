@@ -19,13 +19,14 @@ class SearchDetailView: UIView {
     var backBtn: UIButton = {
         var b = UIButton()
         b.setImage(UIImage(named: "iconBack"), for: .normal)
+        b.addTarget(self, action: #selector(clickBack), for: .touchUpInside)
         return b
     }()
     
-    var stationTextField: UITextField = {
+    lazy var stationTextField: UITextField = {
         var tf = UITextField()
         tf.textColor = .black
-        tf.backgroundColor = .red
+        tf.backgroundColor = .white
         return tf
     }()
     
@@ -33,7 +34,6 @@ class SearchDetailView: UIView {
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        self.endEditing(true)
         setupUI()
         setupConstraints()
         bind()
@@ -65,11 +65,16 @@ class SearchDetailView: UIView {
             $0.leading.equalTo(backBtn.snp.trailing).offset(10)
             $0.trailing.equalToSuperview().offset(-40)
         }
+        stationTextField.becomeFirstResponder()
         
     }
     
     func bind() {
         print("Z")
+    }
+    
+    @objc func clickBack() {
+        self.removeFromSuperview()
     }
 
 }
