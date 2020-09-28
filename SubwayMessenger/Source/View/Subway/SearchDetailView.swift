@@ -130,6 +130,7 @@ extension SearchDetailView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.stationCell, for: indexPath) as! StationCell
+        cell.viewModel = StationCellViewModel(content: self.viewModel.stationList[indexPath.row])
         return cell
     }
     

@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class StationCellViewModel {
+    
+    var stationCD: String
+    var stationNM: String
+    var lineNum: String
+    var frCode: String
+    
+    init(content: SubwayInfoModel) {
+        self.stationCD = content.stationCD
+        self.stationNM = content.stationNM
+        self.lineNum = content.lineNum
+        self.frCode = content.frCode
+    }
+    
+}
