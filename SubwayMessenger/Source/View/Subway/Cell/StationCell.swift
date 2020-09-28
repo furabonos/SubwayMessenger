@@ -16,7 +16,14 @@ class StationCell: BaseCollectionViewCell {
     }()
     
     override func setupUI() {
-        self.backgroundColor = .black
+        self.backgroundColor = .white
+        [lineLabel].forEach { self.addSubview($0) }
+    }
+    
+    override func setupConstraints() {
+//        lineLabel.snp.makeConstraints { 
+//            <#code#>
+//        }
     }
     
 }
