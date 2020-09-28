@@ -76,4 +76,12 @@ class ETCMethod {
         strArr.append(stationLine[0])
         return strArr
     }
+    
+    static func makeSubwayLine(lines: String) -> String {
+        return lines.replacingOccurrences(of: "0", with: "")
+    }
+    
+    static func makeSubwayColor() {
+        
+    }
 }

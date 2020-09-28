@@ -37,24 +37,6 @@ class SubwayViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        // Do any additional setup after loading the view.
-//        Alamofire.request(ETCMethod.makeStationURL(stations: "송내", appKey: API.openAppKey), method: .get)
-//            .validate()
-//            .responseData { (response) in
-//                switch response.result {
-//                case .success(let value) :
-//                    do {
-//                        let decodableValue = try JSONDecoder().decode(SubwayModel.self, from: value)
-//                        print("성공 = \(decodableValue.searchInfoBySubwayNameService.row[0].lineNum)")
-////                        completion(Result.success(decodableValue))
-//                    } catch {
-//
-//                    }
-//                case .failure(let error):
-//                    print("error = \(error)")
-////                    completion(.failure(nil, error))
-//                }
-//        }
         
     }
     

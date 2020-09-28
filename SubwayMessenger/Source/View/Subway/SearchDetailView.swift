@@ -36,6 +36,18 @@ class SearchDetailView: UIView {
     
     var stationType = StationType.start
     
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
+        cv.backgroundColor = .red
+        cv.delegate = self
+        cv.dataSource = self
+        cv.register(StationCell.self, forCellWithReuseIdentifier: self.stationCell)
+        return cv
+    }()
+    
+    var stationCell = "StationCell"
+    
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         setupUI()
@@ -53,7 +65,7 @@ class SearchDetailView: UIView {
     
     func setupUI() {
         self.backgroundColor = .white
-        [backBtn, stationTextField].forEach { self.addSubview($0) }
+        [backBtn, stationTextField, collectionView].forEach { self.addSubview($0) }
     }
     
     func setupConstraints() {
@@ -70,6 +82,11 @@ class SearchDetailView: UIView {
             $0.trailing.equalToSuperview().offset(-40)
         }
         
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(backBtn.snp.bottom).offset(20)
+            $0.leading.bottom.trailing.equalToSuperview()
+        }
+        
     }
     
     func bind() {
@@ -81,11 +98,12 @@ class SearchDetailView: UIView {
     }
     
     @objc func valueChange(_ textField: UITextField) {
+        self.viewModel.stationList.removeAll()
         guard let stations = textField.text else { return }
         self.viewModel.findStations(stations: stations) { (result) in
             switch result {
             case "success":
-                print("z")
+                self.reloadCollectionView()
             case "failure":
                 print("실패")
             default:
@@ -94,5 +112,33 @@ class SearchDetailView: UIView {
         }
         
     }
+    
+    func reloadCollectionView() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.collectionView.reloadData()
+        }
+    }
 
+}
+
+extension SearchDetailView: UICollectionViewDelegate {}
+extension SearchDetailView: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.viewModel.stationList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.stationCell, for: indexPath) as! StationCell
+        return cell
+    }
+    
+    
+    
+}
+extension SearchDetailView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.bounds.width, height: 100)
+    }
 }

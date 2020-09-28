@@ -11,6 +11,8 @@
 		561418B5251C81E900636861 /* StationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561418B4251C81E900636861 /* StationService.swift */; };
 		5627FA4C251DB52F006B06C2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5627FA4B251DB52F006B06C2 /* SearchViewController.swift */; };
 		565C400925133A240083150E /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C400825133A240083150E /* SendViewModel.swift */; };
+		566E70EE2521AA1100D3578B /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70ED2521AA1100D3578B /* StationCell.swift */; };
+		566E70F02521BB1600D3578B /* StationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70EF2521BB1600D3578B /* StationCellViewModel.swift */; };
 		5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679439D24DA3B7F00F258C3 /* AppDelegate.swift */; };
 		567943A524DA3B7F00F258C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A324DA3B7F00F258C3 /* Main.storyboard */; };
 		567943A724DA3B8100F258C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567943A624DA3B8100F258C3 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		561418B4251C81E900636861 /* StationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationService.swift; sourceTree = "<group>"; };
 		5627FA4B251DB52F006B06C2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		565C400825133A240083150E /* SendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
+		566E70ED2521AA1100D3578B /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
+		566E70EF2521BB1600D3578B /* StationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCellViewModel.swift; sourceTree = "<group>"; };
 		5679439A24DA3B7F00F258C3 /* SubwayMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439D24DA3B7F00F258C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		567943A424DA3B7F00F258C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		566E70EC2521A9F800D3578B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				566E70ED2521AA1100D3578B /* StationCell.swift */,
+				566E70EF2521BB1600D3578B /* StationCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		5679439124DA3B7F00F258C3 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +255,7 @@
 				5627FA4B251DB52F006B06C2 /* SearchViewController.swift */,
 				87711CF1251F1332002B5511 /* SearchDetailView.swift */,
 				87711CF32520A317002B5511 /* SearchDetailViewModel.swift */,
+				566E70EC2521A9F800D3578B /* Cell */,
 			);
 			path = Subway;
 			sourceTree = "<group>";
@@ -391,6 +405,7 @@
 				8755F6F6251CCBAF00161DAA /* SubwayModel.swift in Sources */,
 				87711CF2251F1332002B5511 /* SearchDetailView.swift in Sources */,
 				870034B824DFC6420038A8BD /* URLReq.swift in Sources */,
+				566E70F02521BB1600D3578B /* StationCellViewModel.swift in Sources */,
 				87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */,
 				87711CF42520A317002B5511 /* SearchDetailViewModel.swift in Sources */,
 				5627FA4C251DB52F006B06C2 /* SearchViewController.swift in Sources */,
@@ -408,6 +423,7 @@
 				870034BA24DFC67E0038A8BD /* Result.swift in Sources */,
 				8791C18924EEB0A0002E5732 /* ComplaintsCell.swift in Sources */,
 				87C60CEB24DC3D3F00B5A197 /* StationModel.swift in Sources */,
+				566E70EE2521AA1100D3578B /* StationCell.swift in Sources */,
 				567943B624DA40E300F258C3 /* Navigator.swift in Sources */,
 				8791C18D24F234BE002E5732 /* Extension.swift in Sources */,
 				870034BE24E17A5F0038A8BD /* MessengerViewModel.swift in Sources */,
@@ -562,7 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				INFOPLIST_FILE = SubwayMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,7 +597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				INFOPLIST_FILE = SubwayMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

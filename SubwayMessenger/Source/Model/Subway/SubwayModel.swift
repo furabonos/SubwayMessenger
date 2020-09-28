@@ -49,31 +49,3 @@ struct SubwayInfoModel: Decodable {
         case frCode = "FR_CODE"
     }
 }
-
-//"SearchInfoBySubwayNameService": {
-//    "list_total_count": 3,
-//    "RESULT": {
-//        "CODE": "INFO-000",
-//        "MESSAGE": "정상 처리되었습니다"
-//    },
-//    "row": [
-//        {
-//            "STATION_CD": "0205",
-//            "STATION_NM": "동대문역사문화공원",
-//            "LINE_NUM": "02호선",
-//            "FR_CODE": "205"
-//        },
-//        {
-//            "STATION_CD": "0422",
-//            "STATION_NM": "동대문역사문화공원",
-//            "LINE_NUM": "04호선",
-//            "FR_CODE": "422"
-//        },
-//        {
-//            "STATION_CD": "2537",
-//            "STATION_NM": "동대문역사문화공원",
-//            "LINE_NUM": "05호선",
-//            "FR_CODE": "536"
-//        }
-//    ]
-//}

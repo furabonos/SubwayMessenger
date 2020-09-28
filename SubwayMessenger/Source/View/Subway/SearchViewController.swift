@@ -47,6 +47,13 @@ class SearchViewController: BaseViewController {
         b.setImage(UIImage(named: "exchange"), for: .normal)
         return b
     }()
+    
+    var backBtn: UIButton = {
+        var b = UIButton()
+        b.setImage(UIImage(named: "cancel"), for: .normal)
+        b.addTarget(self, action: #selector(clickBack), for: .touchUpInside)
+        return b
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +63,7 @@ class SearchViewController: BaseViewController {
     
     override func setupUI() {
         [searchView].forEach { self.view.addSubview($0) }
-        [startTextField, endTextField, exchangeBtn].forEach { searchView.addSubview($0) }
+        [startTextField, endTextField, exchangeBtn, backBtn].forEach { searchView.addSubview($0) }
     }
     
     override func setupConstraints() {
@@ -85,6 +92,13 @@ class SearchViewController: BaseViewController {
             $0.leading.equalToSuperview().offset(10)
             $0.width.height.equalTo(17)
         }
+        
+        backBtn.snp.makeConstraints {
+            $0.centerY.equalTo(startTextField.snp.centerY)
+            $0.width.height.equalTo(17)
+            $0.leading.equalTo(startTextField.snp.trailing).offset(10)
+            
+        }
     }
     
     @objc func makeDetail(_ sender: UIButton) {
@@ -102,6 +116,10 @@ class SearchViewController: BaseViewController {
                 $0.top.leading.bottom.trailing.equalToSuperview()
             }
         }
+    }
+    
+    @objc func clickBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

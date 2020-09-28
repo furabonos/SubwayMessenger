@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
-class SendViewController: BaseViewController {
+class SendViewController: BaseViewController, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager!
     
     private let viewModel = SendViewModel()
     
@@ -40,14 +43,33 @@ class SendViewController: BaseViewController {
         b.setImage(UIImage(named: "questionmark"), for: .normal)
         return b
     }()
+    
+    var indicator: UIActivityIndicatorView = {
+        var id = UIActivityIndicatorView()
+        if #available(iOS 13.0, *) {
+            id.style = .large
+        } else {
+            // Fallback on earlier versions
+        }
+        id.color = .red
+        id.backgroundColor = .clear
+        id.startAnimating()
+        return id
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
     }
     
     override func setupUI() {
-        [trainBtn, bubbleView, clickMent, qmBtn].forEach { self.view.addSubview($0) }
+        [trainBtn, bubbleView, clickMent, qmBtn, indicator].forEach { self.view.addSubview($0) }
+        self.indicator.isHidden = true
     }
     
     override func setupConstraints() {
@@ -77,10 +99,19 @@ class SendViewController: BaseViewController {
             $0.trailing.equalToSuperview().offset(-20)
             $0.width.height.equalTo(30)
         }
+        
+        indicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(100)
+        }
     }
     
     @objc func findStation() {
-        self.viewModel.findStation(lats: "37.50848388671875", lons: "127.03744043284128") { (result) in
+        self.indicator.isHidden = false
+        let coor = locationManager.location?.coordinate
+        guard let lat = coor?.latitude else { return }
+        guard let lon = coor?.longitude else { return }
+        self.viewModel.findStation(lats: "\(lat)", lons: "\(lon)") { (result) in
             switch result {
             case "success":
                 self.splitStation()
@@ -93,6 +124,7 @@ class SendViewController: BaseViewController {
     }
     
     func splitStation() {
+        self.indicator.isHidden = true
         let alert = UIAlertController(title: "", message: "타고계신 지하철의 다음 정거장을 선택하세요.", preferredStyle: .alert)
         DispatchQueue.main.async {
             for i in 0..<self.viewModel.stationArr.count {
