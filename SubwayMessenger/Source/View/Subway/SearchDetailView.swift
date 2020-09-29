@@ -38,8 +38,10 @@ class SearchDetailView: UIView {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
-        cv.backgroundColor = .red
+        cv.backgroundColor = .white
         cv.delegate = self
         cv.dataSource = self
         cv.register(StationCell.self, forCellWithReuseIdentifier: self.stationCell)
@@ -47,6 +49,12 @@ class SearchDetailView: UIView {
     }()
     
     var stationCell = "StationCell"
+    
+    var grayView: UIView = {
+        var v = UIView()
+        v.backgroundColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
+        return v
+    }()
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -65,7 +73,7 @@ class SearchDetailView: UIView {
     
     func setupUI() {
         self.backgroundColor = .white
-        [backBtn, stationTextField, collectionView].forEach { self.addSubview($0) }
+        [backBtn, stationTextField, grayView,collectionView].forEach { self.addSubview($0) }
     }
     
     func setupConstraints() {
@@ -82,8 +90,14 @@ class SearchDetailView: UIView {
             $0.trailing.equalToSuperview().offset(-40)
         }
         
-        collectionView.snp.makeConstraints {
+        grayView.snp.makeConstraints {
             $0.top.equalTo(backBtn.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(20)
+        }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(grayView.snp.bottom).offset(20)
             $0.leading.bottom.trailing.equalToSuperview()
         }
         
@@ -99,15 +113,17 @@ class SearchDetailView: UIView {
     
     @objc func valueChange(_ textField: UITextField) {
         self.viewModel.stationList.removeAll()
-        guard let stations = textField.text else { return }
-        self.viewModel.findStations(stations: stations) { (result) in
-            switch result {
-            case "success":
-                self.reloadCollectionView()
-            case "failure":
-                print("실패")
-            default:
-                print("Z")
+        if textField.text != "" && textField.text != nil {
+            guard let stations = textField.text else { return }
+            self.viewModel.findStations(stations: stations) { (result) in
+                switch result {
+                case "success":
+                    self.reloadCollectionView()
+                case "failure":
+                    print("실패")
+                default:
+                    print("Z")
+                }
             }
         }
         
@@ -134,12 +150,22 @@ extension SearchDetailView: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if self.stationType == .start {
+            NotificationCenter.default.post(name: Notification.Name("startStation"), object: self.viewModel.stationList[indexPath.row].stationNM)
+            self.removeFromSuperview()
+        }else {
+            NotificationCenter.default.post(name: Notification.Name("finStation"), object: self.viewModel.stationList[indexPath.row].stationNM)
+        }
+        
+    }
+    
     
     
 }
 extension SearchDetailView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.bounds.width, height: 100)
+        return CGSize(width: self.bounds.width, height: 70)
     }
 }

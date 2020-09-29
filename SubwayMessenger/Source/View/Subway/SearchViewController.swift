@@ -58,7 +58,21 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .blue
+        NotificationCenter.default.addObserver(self, selector: #selector(startStation(notification:)), name: Notification.Name("startStation"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(finStation(notification:)), name: Notification.Name("finStation"), object: nil)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func startStation(notification: Notification) {
+        guard let station = notification.object as? String else { return }
+        startTextField.setTitle(station, for: .normal)
+        startTextField.setTitleColor(.black, for: .normal)
+    }
+    
+    @objc func finStation(notification: Notification) {
+        guard let station = notification.object as? String else { return }
+        endTextField.setTitle(station, for: .normal)
+        endTextField.setTitleColor(.black, for: .normal)
     }
     
     override func setupUI() {
