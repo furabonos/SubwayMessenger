@@ -152,10 +152,10 @@ extension SearchDetailView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.stationType == .start {
-            NotificationCenter.default.post(name: Notification.Name("startStation"), object: self.viewModel.stationList[indexPath.row].stationNM)
+            NotificationCenter.default.post(name: Notification.Name("startStation"), object: self.viewModel.stationList[indexPath.row])
             self.removeFromSuperview()
         }else {
-            NotificationCenter.default.post(name: Notification.Name("finStation"), object: self.viewModel.stationList[indexPath.row].stationNM)
+            NotificationCenter.default.post(name: Notification.Name("finStation"), object: self.viewModel.stationList[indexPath.row])
         }
         
     }

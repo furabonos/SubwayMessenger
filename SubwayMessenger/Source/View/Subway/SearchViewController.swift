@@ -64,14 +64,14 @@ class SearchViewController: BaseViewController {
     }
     
     @objc func startStation(notification: Notification) {
-        guard let station = notification.object as? String else { return }
-        startTextField.setTitle(station, for: .normal)
+        guard let subwayDatas = notification.object as? SubwayInfoModel else { return }
+        startTextField.setTitle(subwayDatas.stationNM, for: .normal)
         startTextField.setTitleColor(.black, for: .normal)
     }
     
     @objc func finStation(notification: Notification) {
-        guard let station = notification.object as? String else { return }
-        endTextField.setTitle(station, for: .normal)
+        guard let subwayDatas = notification.object as? SubwayInfoModel else { return }
+        endTextField.setTitle(subwayDatas.stationNM, for: .normal)
         endTextField.setTitleColor(.black, for: .normal)
     }
     
