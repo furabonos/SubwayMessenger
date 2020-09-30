@@ -37,12 +37,28 @@
 		87A2305424DAD92800810364 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2305324DAD92800810364 /* MessengerController.swift */; };
 		87AA48FF250FA09A00858DA1 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AA48FE250FA09A00858DA1 /* SendViewController.swift */; };
 		87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */; };
+		87AF9539252444F30020BFCB /* ODsaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AF9538252444F30020BFCB /* ODsaySDK.framework */; };
+		87AF953A252444F30020BFCB /* ODsaySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87AF9538252444F30020BFCB /* ODsaySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87B9973224FB7EDB0052EB9F /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B9973124FB7EDB0052EB9F /* Memo.swift */; };
 		87C60CEB24DC3D3F00B5A197 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEA24DC3D3F00B5A197 /* StationModel.swift */; };
 		87C60CED24DC3D5F00B5A197 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEC24DC3D5F00B5A197 /* ScheduleModel.swift */; };
 		87C60CEF24DFC14A00B5A197 /* MessengerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C60CEE24DFC14A00B5A197 /* MessengerService.swift */; };
 		D64F44B34AFF789C842D7EED /* Pods_SubwayMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		87AF953B252444F30020BFCB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				87AF953A252444F30020BFCB /* ODsaySDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubwayMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +94,8 @@
 		87A2305324DAD92800810364 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
 		87AA48FE250FA09A00858DA1 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		87AB0EA224E8F083008A841E /* ComplaintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsViewController.swift; sourceTree = "<group>"; };
+		87AF9538252444F30020BFCB /* ODsaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ODsaySDK.framework; sourceTree = "<group>"; };
+		87AF953C25244B0E0020BFCB /* SubwayMessenger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SubwayMessenger-Bridging-Header.h"; sourceTree = "<group>"; };
 		87B9973124FB7EDB0052EB9F /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		87C60CEA24DC3D3F00B5A197 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
 		87C60CEC24DC3D5F00B5A197 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
@@ -91,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87AF9539252444F30020BFCB /* ODsaySDK.framework in Frameworks */,
 				D64F44B34AFF789C842D7EED /* Pods_SubwayMessenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +153,7 @@
 				567943A324DA3B7F00F258C3 /* Main.storyboard */,
 				567943A824DA3B8100F258C3 /* LaunchScreen.storyboard */,
 				567943AB24DA3B8100F258C3 /* Info.plist */,
+				87AF953C25244B0E0020BFCB /* SubwayMessenger-Bridging-Header.h */,
 			);
 			path = SubwayMessenger;
 			sourceTree = "<group>";
@@ -273,6 +293,7 @@
 		8C58A77E4390735822D2385B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87AF9538252444F30020BFCB /* ODsaySDK.framework */,
 				215D6842A5E7E3BAE83C784E /* Pods_SubwayMessenger.framework */,
 			);
 			name = Frameworks;
@@ -299,6 +320,7 @@
 				5679439724DA3B7F00F258C3 /* Frameworks */,
 				5679439824DA3B7F00F258C3 /* Resources */,
 				103E280C2BAA6144F0F92165 /* [CP] Embed Pods Frameworks */,
+				87AF953B252444F30020BFCB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -579,6 +601,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SubwayMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -586,6 +612,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Furabono.github.io.SubwayMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SubwayMessenger/SubwayMessenger-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -598,6 +625,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6DKSMCWLJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SubwayMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -605,6 +636,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Furabono.github.io.SubwayMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SubwayMessenger/SubwayMessenger-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

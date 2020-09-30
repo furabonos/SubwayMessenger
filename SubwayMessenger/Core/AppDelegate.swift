@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupRoot()
+        ODsayService.sharedInst()?.setApiKey(API.odsayAppKey)
+        ODsayService.sharedInst()?.setTimeout(5000)
         return true
     }
     
