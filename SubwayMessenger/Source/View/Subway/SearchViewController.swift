@@ -54,6 +54,27 @@ class SearchViewController: BaseViewController {
         b.addTarget(self, action: #selector(clickBack), for: .touchUpInside)
         return b
     }()
+    
+    var searchBtn: UIButton = {
+        var b = UIButton()
+        b.layer.cornerRadius = 5
+        b.layer.borderWidth = 1
+        b.setTitle("검색", for: .normal)
+        b.setTitleColor(.black, for: .normal)
+        return b
+    }()
+    
+    var resultView: UIView = {
+        var v = UIView()
+        v.backgroundColor = .green
+        return v
+    }()
+    
+    var shortTimeView: UIView = {
+        var v = UIView()
+        v.backgroundColor = .red
+        return v
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,15 +97,16 @@ class SearchViewController: BaseViewController {
     }
     
     override func setupUI() {
-        [searchView].forEach { self.view.addSubview($0) }
-        [startTextField, endTextField, exchangeBtn, backBtn].forEach { searchView.addSubview($0) }
+        [searchView, resultView].forEach { self.view.addSubview($0) }
+        [startTextField, endTextField, exchangeBtn, backBtn, searchBtn].forEach { searchView.addSubview($0) }
+        [shortTimeView].forEach { resultView.addSubview($0) }
     }
     
     override func setupConstraints() {
         searchView.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(160)
+            $0.height.equalTo(150)
         }
         
         startTextField.snp.makeConstraints {
@@ -111,7 +133,23 @@ class SearchViewController: BaseViewController {
             $0.centerY.equalTo(startTextField.snp.centerY)
             $0.width.height.equalTo(17)
             $0.leading.equalTo(startTextField.snp.trailing).offset(10)
-            
+        }
+        
+        searchBtn.snp.makeConstraints {
+            $0.top.equalTo(endTextField.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(80)
+            $0.height.equalTo(35)
+        }
+        
+        resultView.snp.makeConstraints {
+            $0.top.equalTo(searchView.snp.bottom)
+            $0.leading.bottom.trailing.equalToSuperview()
+        }
+        
+        shortTimeView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalToSuperview().dividedBy(2)
         }
     }
     

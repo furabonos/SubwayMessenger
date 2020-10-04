@@ -40,7 +40,7 @@ class SubwayViewController: BaseViewController {
         ODsayService.sharedInst()?.requestSubwayPath(1000, sid: 201, eid: 202, sopt: 1, responseBlock: { (retCode:Int32, resultDic:[AnyHashable : Any]?) in
             guard let results = resultDic else { return }
             var ss = results["result"] as! [String: Any]
-            
+            print("느아 = \(ss["globalEndName"])")
         })
     }
     
