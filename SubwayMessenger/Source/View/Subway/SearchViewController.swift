@@ -10,9 +10,15 @@ import UIKit
 
 class SearchViewController: BaseViewController {
     
+    private let viewModel = SearchViewModel()
+    
+    var startCode = String()
+    var endCode = String()
+    
     var searchView: UIView = {
         var v = UIView()
         v.backgroundColor = .white
+        
         return v
     }()
     
@@ -61,6 +67,7 @@ class SearchViewController: BaseViewController {
         b.layer.borderWidth = 1
         b.setTitle("검색", for: .normal)
         b.setTitleColor(.black, for: .normal)
+        b.addTarget(self, action: #selector(search), for: .touchUpInside)
         return b
     }()
     
@@ -72,8 +79,17 @@ class SearchViewController: BaseViewController {
     
     var shortTimeView: UIView = {
         var v = UIView()
-        v.backgroundColor = .red
+        v.backgroundColor = .white
         return v
+    }()
+    
+    //최단거리뷰 shortTimeView
+    var shortTimeViewLabel: UILabel = {
+        var l = UILabel()
+        l.text = "최단거리"
+        l.textColor = .black
+        l.backgroundColor = .white
+        return l
     }()
 
     override func viewDidLoad() {
@@ -88,18 +104,21 @@ class SearchViewController: BaseViewController {
         guard let subwayDatas = notification.object as? SubwayInfoModel else { return }
         startTextField.setTitle(subwayDatas.stationNM, for: .normal)
         startTextField.setTitleColor(.black, for: .normal)
+        self.startCode = subwayDatas.frCode
     }
     
     @objc func finStation(notification: Notification) {
         guard let subwayDatas = notification.object as? SubwayInfoModel else { return }
         endTextField.setTitle(subwayDatas.stationNM, for: .normal)
         endTextField.setTitleColor(.black, for: .normal)
+        self.endCode = subwayDatas.frCode
     }
     
     override func setupUI() {
         [searchView, resultView].forEach { self.view.addSubview($0) }
         [startTextField, endTextField, exchangeBtn, backBtn, searchBtn].forEach { searchView.addSubview($0) }
         [shortTimeView].forEach { resultView.addSubview($0) }
+        [shortTimeViewLabel].forEach { shortTimeView.addSubview($0) }
     }
     
     override func setupConstraints() {
@@ -108,7 +127,7 @@ class SearchViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(150)
         }
-        
+        searchView.addLine(position: .bottom, color: .black, width: 2 )
         startTextField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
             $0.leading.equalToSuperview().offset(40)
@@ -146,11 +165,20 @@ class SearchViewController: BaseViewController {
             $0.top.equalTo(searchView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
         }
+        // shorttimeview
         
         shortTimeView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.height.equalToSuperview().dividedBy(2)
         }
+        
+        shortTimeViewLabel.snp.makeConstraints {
+            $0.top.leading.equalToSuperview().offset(10)
+            $0.width.equalTo(70)
+            $0.height.equalTo(30)
+        }
+        
+        
     }
     
     @objc func makeDetail(_ sender: UIButton) {
@@ -172,6 +200,10 @@ class SearchViewController: BaseViewController {
     
     @objc func clickBack() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func search() {
+        print("ss = \(self.startCode), \(self.endCode)")
     }
 
 }

@@ -13,6 +13,7 @@
 		565C400925133A240083150E /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C400825133A240083150E /* SendViewModel.swift */; };
 		566E70EE2521AA1100D3578B /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70ED2521AA1100D3578B /* StationCell.swift */; };
 		566E70F02521BB1600D3578B /* StationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70EF2521BB1600D3578B /* StationCellViewModel.swift */; };
+		566E70F2252AE4B200D3578B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70F1252AE4B200D3578B /* SearchViewModel.swift */; };
 		5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679439D24DA3B7F00F258C3 /* AppDelegate.swift */; };
 		567943A524DA3B7F00F258C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A324DA3B7F00F258C3 /* Main.storyboard */; };
 		567943A724DA3B8100F258C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567943A624DA3B8100F258C3 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		565C400825133A240083150E /* SendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
 		566E70ED2521AA1100D3578B /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 		566E70EF2521BB1600D3578B /* StationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCellViewModel.swift; sourceTree = "<group>"; };
+		566E70F1252AE4B200D3578B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5679439A24DA3B7F00F258C3 /* SubwayMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439D24DA3B7F00F258C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		567943A424DA3B7F00F258C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				561418B2251B149D00636861 /* SubwayViewController.swift */,
 				5627FA4B251DB52F006B06C2 /* SearchViewController.swift */,
+				566E70F1252AE4B200D3578B /* SearchViewModel.swift */,
 				87711CF1251F1332002B5511 /* SearchDetailView.swift */,
 				87711CF32520A317002B5511 /* SearchDetailViewModel.swift */,
 				566E70EC2521A9F800D3578B /* Cell */,
@@ -442,6 +445,7 @@
 				8791C18B24F0D9CE002E5732 /* MemoViewController.swift in Sources */,
 				870034BC24DFD1B60038A8BD /* ETCMethod.swift in Sources */,
 				567943BD24DA423D00F258C3 /* Service.swift in Sources */,
+				566E70F2252AE4B200D3578B /* SearchViewModel.swift in Sources */,
 				870034BA24DFC67E0038A8BD /* Result.swift in Sources */,
 				8791C18924EEB0A0002E5732 /* ComplaintsCell.swift in Sources */,
 				87C60CEB24DC3D3F00B5A197 /* StationModel.swift in Sources */,
@@ -600,7 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

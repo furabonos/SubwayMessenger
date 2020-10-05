@@ -156,6 +156,7 @@ extension SearchDetailView: UICollectionViewDataSource {
             self.removeFromSuperview()
         }else {
             NotificationCenter.default.post(name: Notification.Name("finStation"), object: self.viewModel.stationList[indexPath.row])
+            self.removeFromSuperview()
         }
         
     }
