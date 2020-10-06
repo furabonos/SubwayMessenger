@@ -18,7 +18,7 @@ class SearchViewController: BaseViewController {
     var searchView: UIView = {
         var v = UIView()
         v.backgroundColor = .white
-        
+        v.addLine(position: .bottom, color: UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1), width: 10)
         return v
     }()
     
@@ -127,7 +127,7 @@ class SearchViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(150)
         }
-        searchView.addLine(position: .bottom, color: .black, width: 2 )
+
         startTextField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
             $0.leading.equalToSuperview().offset(40)
