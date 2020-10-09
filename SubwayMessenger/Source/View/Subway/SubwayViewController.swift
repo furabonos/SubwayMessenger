@@ -37,6 +37,10 @@ class SubwayViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        //언주 926
+        //I116
+        var sss = "I116"
+        let zzz: Int32? = Int32(sss)
         ODsayService.sharedInst()?.requestSubwayPath(1000, sid: 150, eid: 926, sopt: 1, responseBlock: { (retCode:Int32, resultDic:[AnyHashable : Any]?) in
             guard let results = resultDic else { return }
             var ss = results["result"] as! [String: Any]
