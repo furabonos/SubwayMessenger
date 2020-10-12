@@ -14,6 +14,7 @@
 		566E70EE2521AA1100D3578B /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70ED2521AA1100D3578B /* StationCell.swift */; };
 		566E70F02521BB1600D3578B /* StationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70EF2521BB1600D3578B /* StationCellViewModel.swift */; };
 		566E70F2252AE4B200D3578B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70F1252AE4B200D3578B /* SearchViewModel.swift */; };
+		566E70F42533EBA000D3578B /* ShortTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70F32533EBA000D3578B /* ShortTimeCell.swift */; };
 		5679439E24DA3B7F00F258C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679439D24DA3B7F00F258C3 /* AppDelegate.swift */; };
 		567943A524DA3B7F00F258C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567943A324DA3B7F00F258C3 /* Main.storyboard */; };
 		567943A724DA3B8100F258C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567943A624DA3B8100F258C3 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		566E70ED2521AA1100D3578B /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 		566E70EF2521BB1600D3578B /* StationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCellViewModel.swift; sourceTree = "<group>"; };
 		566E70F1252AE4B200D3578B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		566E70F32533EBA000D3578B /* ShortTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTimeCell.swift; sourceTree = "<group>"; };
 		5679439A24DA3B7F00F258C3 /* SubwayMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5679439D24DA3B7F00F258C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		567943A424DA3B7F00F258C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				566E70ED2521AA1100D3578B /* StationCell.swift */,
 				566E70EF2521BB1600D3578B /* StationCellViewModel.swift */,
+				566E70F32533EBA000D3578B /* ShortTimeCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				565C400925133A240083150E /* SendViewModel.swift in Sources */,
 				87A2304E24DAD76700810364 /* BaseViewController.swift in Sources */,
 				561418B5251C81E900636861 /* StationService.swift in Sources */,
+				566E70F42533EBA000D3578B /* ShortTimeCell.swift in Sources */,
 				87C60CEF24DFC14A00B5A197 /* MessengerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,7 +608,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -628,7 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

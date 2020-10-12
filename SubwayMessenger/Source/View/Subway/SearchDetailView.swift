@@ -74,6 +74,12 @@ class SearchDetailView: UIView {
     func setupUI() {
         self.backgroundColor = .white
         [backBtn, stationTextField, grayView,collectionView].forEach { self.addSubview($0) }
+        ODsayService.sharedInst()?.requestSearchStation("사당", cid: 1000, stationClass: "2", displayCnt: 5, startNo: 0, myLocation: "", responseBlock: { (retCode:Int32, resultDic:[AnyHashable : Any]?) in
+            guard let results = resultDic else { return }
+            var ss = results["result"] as! [String: Any]
+            var ss2 = ss["station"] as! Array<[String: Any]>
+            print("nnnnnn = \(ss2[0])")
+        })
     }
     
     func setupConstraints() {

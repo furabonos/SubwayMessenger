@@ -39,9 +39,14 @@ class SubwayViewController: BaseViewController {
         self.view.backgroundColor = .white
         //언주 926
         //I116
+        //93596
+        //93597
+        //104876
+        //226
+        //433
         var sss = "I116"
         let zzz: Int32? = Int32(sss)
-        ODsayService.sharedInst()?.requestSubwayPath(1000, sid: 150, eid: 926, sopt: 1, responseBlock: { (retCode:Int32, resultDic:[AnyHashable : Any]?) in
+        ODsayService.sharedInst()?.requestSubwayPath(1000, sid: 150, eid: 226, sopt: 1, responseBlock: { (retCode:Int32, resultDic:[AnyHashable : Any]?) in
             guard let results = resultDic else { return }
             var ss = results["result"] as! [String: Any]
             print("느아 = \(ss["globalEndName"])")

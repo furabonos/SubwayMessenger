@@ -15,6 +15,8 @@ class SearchViewController: BaseViewController {
     var startCode = String()
     var endCode = String()
     
+    var shortTimeCell = "ShortTimeCell"
+    
     var searchView: UIView = {
         var v = UIView()
         v.backgroundColor = .white
@@ -71,26 +73,16 @@ class SearchViewController: BaseViewController {
         return b
     }()
     
-    var resultView: UIView = {
-        var v = UIView()
-        v.backgroundColor = .green
-        return v
-    }()
-    
-    var shortTimeView: UIView = {
-        var v = UIView()
-        v.backgroundColor = .white
-        return v
-    }()
-    
-    //최단거리뷰 shortTimeView
-    var shortTimeViewLabel: UILabel = {
-        var l = UILabel()
-        l.text = "최단거리"
-        l.textColor = .black
-        l.backgroundColor = .white
-        return l
-    }()
+    lazy var collectionView: UICollectionView = {
+            let layout = UICollectionViewFlowLayout()
+            let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
+            cv.backgroundColor = .red
+    //        cv.delegate = self
+    //        cv.dataSource = self
+            cv.register(ShortTimeCell.self, forCellWithReuseIdentifier: self.shortTimeCell)
+    //        cv.register(GADCell.self, forCellWithReuseIdentifier: self.gadCell)
+            return cv
+        }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,10 +107,8 @@ class SearchViewController: BaseViewController {
     }
     
     override func setupUI() {
-        [searchView, resultView].forEach { self.view.addSubview($0) }
+        [searchView, collectionView].forEach { self.view.addSubview($0) }
         [startTextField, endTextField, exchangeBtn, backBtn, searchBtn].forEach { searchView.addSubview($0) }
-        [shortTimeView].forEach { resultView.addSubview($0) }
-        [shortTimeViewLabel].forEach { shortTimeView.addSubview($0) }
     }
     
     override func setupConstraints() {
@@ -161,23 +151,10 @@ class SearchViewController: BaseViewController {
             $0.height.equalTo(35)
         }
         
-        resultView.snp.makeConstraints {
+        collectionView.snp.makeConstraints {
             $0.top.equalTo(searchView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
         }
-        // shorttimeview
-        
-        shortTimeView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalToSuperview().dividedBy(2)
-        }
-        
-        shortTimeViewLabel.snp.makeConstraints {
-            $0.top.leading.equalToSuperview().offset(10)
-            $0.width.equalTo(70)
-            $0.height.equalTo(30)
-        }
-        
         
     }
     
