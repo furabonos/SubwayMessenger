@@ -74,11 +74,13 @@ class SearchDetailView: UIView {
     func setupUI() {
         self.backgroundColor = .white
         [backBtn, stationTextField, grayView,collectionView].forEach { self.addSubview($0) }
-        ODsayService.sharedInst()?.requestSearchStation("사당", cid: 1000, stationClass: "2", displayCnt: 5, startNo: 0, myLocation: "", responseBlock: { (retCode:Int32, resultDic:[AnyHashable : Any]?) in
+        ODsayService.sharedInst()?.requestSearchStation("구래", cid: 1000, stationClass: "2", displayCnt: 5, startNo: 0, myLocation: "", responseBlock: { (retCode:Int32, resultDic:[AnyHashable : Any]?) in
             guard let results = resultDic else { return }
             var ss = results["result"] as! [String: Any]
             var ss2 = ss["station"] as! Array<[String: Any]>
-            print("nnnnnn = \(ss2[0])")
+            print(ss2)
+            var sss = ss2[0]["stationID"] as! Int
+            print(sss)
         })
     }
     
@@ -118,13 +120,24 @@ class SearchDetailView: UIView {
     }
     
     @objc func valueChange(_ textField: UITextField) {
-        self.viewModel.stationList.removeAll()
+        self.viewModel.stationLists.removeAll()
         if textField.text != "" && textField.text != nil {
             guard let stations = textField.text else { return }
-            self.viewModel.findStations(stations: stations) { (result) in
+//            self.viewModel.findStations(stations: stations) { (result) in
+//                switch result {
+//                case "success":
+//                    self.reloadCollectionView()
+//                case "failure":
+//                    print("실패")
+//                default:
+//                    print("Z")
+//                }
+//            }
+            self.viewModel.stationFind(stations: stations) { (result) in
                 switch result {
                 case "success":
                     self.reloadCollectionView()
+                    print("씨이팔 = \(self.viewModel.stationLists)")
                 case "failure":
                     print("실패")
                 default:
@@ -147,21 +160,21 @@ extension SearchDetailView: UICollectionViewDelegate {}
 extension SearchDetailView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.stationList.count
+        return self.viewModel.stationLists.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.stationCell, for: indexPath) as! StationCell
-        cell.viewModel = StationCellViewModel(content: self.viewModel.stationList[indexPath.row])
+        cell.viewModel = StationCellViewModel(content: self.viewModel.stationLists[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.stationType == .start {
-            NotificationCenter.default.post(name: Notification.Name("startStation"), object: self.viewModel.stationList[indexPath.row])
+            NotificationCenter.default.post(name: Notification.Name("startStation"), object: self.viewModel.stationLists[indexPath.row])
             self.removeFromSuperview()
         }else {
-            NotificationCenter.default.post(name: Notification.Name("finStation"), object: self.viewModel.stationList[indexPath.row])
+            NotificationCenter.default.post(name: Notification.Name("finStation"), object: self.viewModel.stationLists[indexPath.row])
             self.removeFromSuperview()
         }
         

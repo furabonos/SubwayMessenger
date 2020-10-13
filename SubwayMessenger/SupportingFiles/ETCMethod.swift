@@ -83,49 +83,49 @@ class ETCMethod {
     
     static func makeSubwayColor(lines: String) -> UIColor {
         switch lines {
-        case "1호선":
+        case "수도권 1호선":
             return UIColor(red: 38/255, green: 60/255, blue: 150/255, alpha: 1)
-        case "2호선":
+        case "수도권 2호선":
             return UIColor(red: 60/255, green: 180/255, blue: 74/255, alpha: 1)
-        case "3호선":
+        case "수도권 3호선":
             return UIColor(red: 240/255, green: 110/255, blue: 0/255, alpha: 1)
-        case "4호선":
+        case "수도권 4호선":
             return UIColor(red: 44/255, green: 158/255, blue: 222/255, alpha: 1)
-        case "5호선":
+        case "수도권 5호선":
             return UIColor(red: 137/255, green: 54/255, blue: 224/255, alpha: 1)
-        case "6호선":
+        case "수도권 6호선":
             return UIColor(red: 181/255, green: 80/255, blue: 10/255, alpha: 1)
-        case "7호선":
+        case "수도권 7호선":
             return UIColor(red: 105/255, green: 114/255, blue: 21/255, alpha: 1)
-        case "8호선":
+        case "수도권 8호선":
             return UIColor(red: 228/255, green: 30/255, blue: 110/255, alpha: 1)
-        case "9호선":
+        case "수도권 9호선":
             return UIColor(red: 209/255, green: 166/255, blue: 44/255, alpha: 1)
-        case "분당선":
+        case "수인.분당선":
             return UIColor(red: 235/255, green: 169/255, blue: 0/255, alpha: 1)
-        case "인천선":
+        case "인천 1호선":
             return UIColor(red: 111/255, green: 153/255, blue: 208/255, alpha: 1)
-        case "공항철도":
+        case "수도권 공항철도":
             return UIColor(red: 115/255, green: 182/255, blue: 228/255, alpha: 1)
-        case "인천2호선":
+        case "인천 2호선":
             return UIColor(red: 115/255, green: 182/255, blue: 228/255, alpha: 1)
-        case "경의선":
+        case "경의중앙선":
             return UIColor(red: 124/255, green: 196/255, blue: 165/255, alpha: 1)
-        case "용인경전철":
+        case "수도권 에버라인":
             return UIColor(red: 119/255, green: 195/255, blue: 113/255, alpha: 1)
-        case "경춘선":
+        case "수도권 경춘선":
             return UIColor(red: 9/255, green: 175/255, blue: 123/255, alpha: 1)
-        case "신분당선":
+        case "수도권 신분당선":
             return UIColor(red: 167/255, green: 29/255, blue: 49/255, alpha: 1)
-        case "의정부경전철":
+        case "수도권 의정부경전철":
             return UIColor(red: 255/255, green: 157/255, blue: 38/255, alpha: 1)
-        case "경강선":
+        case "수도권 경강선":
             return UIColor(red: 37/255, green: 115/255, blue: 242/255, alpha: 1)
         case "우이신설경전철":
             return UIColor(red: 198/255, green: 192/255, blue: 0/255, alpha: 1)
-        case "서해선":
+        case "수도권 서해선(소사-원시)":
             return UIColor(red: 140/255, green: 197/255, blue: 63/255, alpha: 1)
-        case "김포도시철도":
+        case "김포골드라인":
             return UIColor(red: 150/255, green: 113/255, blue: 10/255, alpha: 1)
         default:
             return UIColor.black

@@ -37,9 +37,9 @@ class StationCell: BaseCollectionViewCell {
     
     var viewModel: StationCellViewModel! {
         didSet {
-            self.lineLabel.backgroundColor = ETCMethod.makeSubwayColor(lines: ETCMethod.makeSubwayLine(lines: viewModel.lineNum))
+            self.lineLabel.backgroundColor = ETCMethod.makeSubwayColor(lines: viewModel.lineNum)
             self.makeLineLabelConstraints(line: ETCMethod.makeSubwayLine(lines: viewModel.lineNum))
-            self.makeLineLabelText(line: ETCMethod.makeSubwayLine(lines: viewModel.lineNum))
+            self.makeLineLabelText(line: viewModel.lineNum)
             stationLabel.text = viewModel.stationNM
         }
     }
@@ -72,7 +72,7 @@ class StationCell: BaseCollectionViewCell {
     
     func makeLineLabelConstraints(line: String) {
         switch line {
-        case "1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선":
+        case "수도권 1호선", "수도권 2호선", "수도권 3호선", "수도권 4호선", "수도권 5호선", "수도권 6호선", "수도권 7호선", "수도권 8호선", "수도권 9호선":
             self.lineLabel.snp.remakeConstraints {
                 $0.centerY.equalToSuperview()
                 $0.leading.equalToSuperview().offset(20)
@@ -92,34 +92,35 @@ class StationCell: BaseCollectionViewCell {
     
     func makeLineLabelText(line: String) {
         switch line {
-        case "1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선":
-            var lineText = line.components(separatedBy: "호선")
+        case "수도권 1호선", "수도권 2호선", "수도권 3호선", "수도권 4호선", "수도권 5호선", "수도권 6호선", "수도권 7호선", "수도권 8호선", "수도권 9호선":
+            var lines = line.components(separatedBy: " ")
+            var lineText = lines[1].components(separatedBy: "호선")
             self.lineLabel.text = lineText[0]
-        case "분당선":
+        case "수인.분당선":
             self.lineLabel.text = "수인분당"
-        case "인천선":
+        case "인천 1호선":
             self.lineLabel.text = "인천1"
-        case "공항철도":
+        case "수도권 공항철도":
             self.lineLabel.text = "공항"
-        case "인천2호선":
+        case "인천 2호선":
             self.lineLabel.text = "인천2"
-        case "경의선":
+        case "경의중앙선":
             self.lineLabel.text = "경의중앙"
-        case "용인경전철":
+        case "수도권 에버라인":
             self.lineLabel.text = "에버라인"
-        case "경춘선":
+        case "수도권 경춘선":
             self.lineLabel.text = "경춘"
-        case "신분당선":
+        case "수도권 신분당선":
             self.lineLabel.text = "신분당"
-        case "의정부경전철":
+        case "수도권 의정부경전철":
             self.lineLabel.text = "의정부"
-        case "경강선":
+        case "수도권 경강선":
             self.lineLabel.text = "경강"
         case "우이신설경전철":
             self.lineLabel.text = "우이신설"
-        case "서해선":
+        case "수도권 서해선(소사-원시)":
             self.lineLabel.text = "서해"
-        case "김포도시철도":
+        case "김포골드라인":
             self.lineLabel.text = "김포골드"
         default:
             self.lineLabel.text = ""

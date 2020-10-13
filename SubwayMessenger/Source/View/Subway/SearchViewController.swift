@@ -12,8 +12,8 @@ class SearchViewController: BaseViewController {
     
     private let viewModel = SearchViewModel()
     
-    var startCode = String()
-    var endCode = String()
+    var startCode = Int()
+    var endCode = Int()
     
     var shortTimeCell = "ShortTimeCell"
     
@@ -93,17 +93,17 @@ class SearchViewController: BaseViewController {
     }
     
     @objc func startStation(notification: Notification) {
-        guard let subwayDatas = notification.object as? SubwayInfoModel else { return }
-        startTextField.setTitle(subwayDatas.stationNM, for: .normal)
+        guard let subwayDatas = notification.object as? [String: Any] else { return }
+        startTextField.setTitle(subwayDatas["stationName"] as! String, for: .normal)
         startTextField.setTitleColor(.black, for: .normal)
-        self.startCode = subwayDatas.frCode
+        self.startCode = subwayDatas["stationID"] as! Int
     }
     
     @objc func finStation(notification: Notification) {
-        guard let subwayDatas = notification.object as? SubwayInfoModel else { return }
-        endTextField.setTitle(subwayDatas.stationNM, for: .normal)
+        guard let subwayDatas = notification.object as? [String: Any] else { return }
+        endTextField.setTitle(subwayDatas["stationName"] as! String, for: .normal)
         endTextField.setTitleColor(.black, for: .normal)
-        self.endCode = subwayDatas.frCode
+        self.endCode = subwayDatas["stationID"] as! Int
     }
     
     override func setupUI() {
