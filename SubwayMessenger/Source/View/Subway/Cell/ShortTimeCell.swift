@@ -19,6 +19,7 @@ class ShortTimeCell: BaseCollectionViewCell {
     }()
     
     override func setupUI() {
+        self.backgroundColor = .yellow
         [titleLabel].forEach { self.addSubview($0) }
     }
     

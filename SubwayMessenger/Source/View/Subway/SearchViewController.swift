@@ -74,15 +74,14 @@ class SearchViewController: BaseViewController {
     }()
     
     lazy var collectionView: UICollectionView = {
-            let layout = UICollectionViewFlowLayout()
-            let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
-            cv.backgroundColor = .red
-    //        cv.delegate = self
-    //        cv.dataSource = self
-            cv.register(ShortTimeCell.self, forCellWithReuseIdentifier: self.shortTimeCell)
-    //        cv.register(GADCell.self, forCellWithReuseIdentifier: self.gadCell)
-            return cv
-        }()
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
+        cv.backgroundColor = .red
+        cv.delegate = self
+        cv.dataSource = self
+        cv.register(ShortTimeCell.self, forCellWithReuseIdentifier: self.shortTimeCell)
+        return cv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,5 +182,25 @@ class SearchViewController: BaseViewController {
         print("ss = \(self.startCode), \(self.endCode)")
     }
 
+}
+
+extension SearchViewController: UICollectionViewDelegate {}
+extension SearchViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.shortTimeCell, for: indexPath) as! ShortTimeCell
+        return cell
+    }
+}
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.bounds.width, height: collectionView.bounds.height / 2)
+    }
+    
 }
 
