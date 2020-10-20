@@ -41,6 +41,7 @@ enum LinePosition {
 }
 
 extension UIView {
+    
     func addLine(position: LinePosition, color: UIColor, width: Double) {
         let lineView = UIView()
         lineView.backgroundColor = color
@@ -59,5 +60,14 @@ extension UIView {
             self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[lineView(width)]|", options:NSLayoutConstraint.FormatOptions(rawValue: 0), metrics:metrics, views:views))
             break
         }
+    }
+    
+    func addShadow() {
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 10
+        self.layer.shadowRadius = 10
+        self.layer.shadowColor = Colors.shadowColor.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.shadowOpacity = 1.0
     }
 }

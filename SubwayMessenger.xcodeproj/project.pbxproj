@@ -10,6 +10,7 @@
 		561418B3251B149D00636861 /* SubwayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561418B2251B149D00636861 /* SubwayViewController.swift */; };
 		561418B5251C81E900636861 /* StationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561418B4251C81E900636861 /* StationService.swift */; };
 		5627FA4C251DB52F006B06C2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5627FA4B251DB52F006B06C2 /* SearchViewController.swift */; };
+		565842D7253EB31300945E57 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565842D6253EB31300945E57 /* Colors.swift */; };
 		565C400925133A240083150E /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C400825133A240083150E /* SendViewModel.swift */; };
 		566E70EE2521AA1100D3578B /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70ED2521AA1100D3578B /* StationCell.swift */; };
 		566E70F02521BB1600D3578B /* StationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E70EF2521BB1600D3578B /* StationCellViewModel.swift */; };
@@ -67,6 +68,7 @@
 		561418B2251B149D00636861 /* SubwayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayViewController.swift; sourceTree = "<group>"; };
 		561418B4251C81E900636861 /* StationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationService.swift; sourceTree = "<group>"; };
 		5627FA4B251DB52F006B06C2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		565842D6253EB31300945E57 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		565C400825133A240083150E /* SendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
 		566E70ED2521AA1100D3578B /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 		566E70EF2521BB1600D3578B /* StationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCellViewModel.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				870034BB24DFD1B60038A8BD /* ETCMethod.swift */,
 				8791C18C24F234BE002E5732 /* Extension.swift */,
 				87B9973124FB7EDB0052EB9F /* Memo.swift */,
+				565842D6253EB31300945E57 /* Colors.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				8755F6F6251CCBAF00161DAA /* SubwayModel.swift in Sources */,
 				87711CF2251F1332002B5511 /* SearchDetailView.swift in Sources */,
 				870034B824DFC6420038A8BD /* URLReq.swift in Sources */,
+				565842D7253EB31300945E57 /* Colors.swift in Sources */,
 				566E70F02521BB1600D3578B /* StationCellViewModel.swift in Sources */,
 				87AB0EA324E8F083008A841E /* ComplaintsViewController.swift in Sources */,
 				87711CF42520A317002B5511 /* SearchDetailViewModel.swift in Sources */,

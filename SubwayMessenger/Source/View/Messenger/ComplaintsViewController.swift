@@ -24,20 +24,14 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
     
     var infoView: UIView = {
         var v = UIView()
-        v.backgroundColor = .white
-        v.layer.cornerRadius = 10
-        v.layer.shadowColor = UIColor.black.cgColor
-        v.layer.shadowOffset = CGSize(width: 1, height: 1)
-        v.layer.shadowOpacity = 0.8
-        v.layer.shadowRadius = 4.0
-        v.layer.masksToBounds = false
+        v.addShadow()
         return v
     }()
     
     lazy var infoLabel: UILabel = {
         var l = UILabel()
         l.backgroundColor = .white
-        l.textColor = .black
+        l.textColor = Colors.coolGrey
         l.text = "\(self.lineNumber) - \(self.trainNumber)호 - 1번째 칸"
         l.textAlignment = .center
         return l
@@ -45,13 +39,7 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
     
     var trainView: UIView = {
         var v = UIView()
-        v.backgroundColor = .white
-        v.layer.cornerRadius = 10
-        v.layer.shadowColor = UIColor.black.cgColor
-        v.layer.shadowOffset = CGSize(width: 1, height: 1)
-        v.layer.shadowOpacity = 0.8
-        v.layer.shadowRadius = 4.0
-        v.layer.masksToBounds = false
+        v.addShadow()
         return v
     }()
     
@@ -75,7 +63,7 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
         var b = UIButton()
         b.setBackgroundImage(UIImage(named: "trainPlatform"), for: .normal)
         b.setTitle("1", for: .normal)
-        b.setTitleColor(.black, for: .normal)
+        b.setTitleColor(Colors.coolGrey, for: .normal)
         b.titleLabel?.font = .boldSystemFont(ofSize: 17)
         b.titleEdgeInsets = UIEdgeInsets(top: 0, left: -40, bottom: 0, right: 0)
         return b
@@ -83,20 +71,14 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
     
     var selectView: UIView = {
         var v = UIView()
-        v.backgroundColor = .white
-        v.layer.cornerRadius = 10
-        v.layer.shadowColor = UIColor.black.cgColor
-        v.layer.shadowOffset = CGSize(width: 1, height: 1)
-        v.layer.shadowOpacity = 0.8
-        v.layer.shadowRadius = 4.0
-        v.layer.masksToBounds = false
+        v.addShadow()
         return v
     }()
     
     var selectBtn: UIButton = {
         var b = UIButton()
         b.setTitle("민원의 종류를 선택해주세요", for: .normal)
-        b.setTitleColor(.black, for: .normal)
+        b.setTitleColor(Colors.coolGrey, for: .normal)
         b.backgroundColor = .white
         b.addTarget(self, action: #selector(selectCom), for: .touchUpInside)
         return b
@@ -106,13 +88,7 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
     
     var complaintsView: UIView = {
         var v = UIView()
-        v.backgroundColor = .white
-        v.layer.cornerRadius = 10
-        v.layer.shadowColor = UIColor.black.cgColor
-        v.layer.shadowOffset = CGSize(width: 1, height: 1)
-        v.layer.shadowOpacity = 0.8
-        v.layer.shadowRadius = 4.0
-        v.layer.masksToBounds = false
+        v.addShadow()
         return v
     }()
     
@@ -126,15 +102,9 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
     
     var sendBtn: UIButton = {
         var v = UIButton()
-        v.backgroundColor = .white
-        v.layer.cornerRadius = 10
-        v.layer.shadowColor = UIColor.black.cgColor
-        v.layer.shadowOffset = CGSize(width: 1, height: 1)
-        v.layer.shadowOpacity = 0.8
-        v.layer.shadowRadius = 4.0
-        v.layer.masksToBounds = false
+        v.addShadow()
         v.setTitle("전송", for: .normal)
-        v.setTitleColor(.black, for: .normal)
+        v.setTitleColor(Colors.coolGrey, for: .normal)
         v.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         return v
     }()
@@ -302,7 +272,7 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
     }
     
     func textViewSetupView() {
-        complaintsField.text = "this is placeholder"
+        complaintsField.text = "자세한 민원사항을 입력해주세요."
         complaintsField.textColor = .lightGray
     }
     
@@ -340,9 +310,15 @@ class ComplaintsViewController: BaseViewController, MFMessageComposeViewControll
             messageComposer.messageComposeDelegate = self
             if MFMessageComposeViewController.canSendText() {
                 messageComposer.recipients = [tel]
-                messageComposer.body = "[\(self.infoLabel.text!) - \(selectBtn.title(for: .normal)!)]\n\(self.complaintsField.text!)"
-                self.present(messageComposer, animated: true, completion: nil)
+                if complaintsText == "자세한 민원사항을 입력해주세요." {
+                    messageComposer.body = "[\(self.infoLabel.text!) - \(selectBtn.title(for: .normal)!)]"
+                    self.present(messageComposer, animated: true, completion: nil)
+                }else {
+                    messageComposer.body = "[\(self.infoLabel.text!) - \(selectBtn.title(for: .normal)!)]\n\(complaintsText)"
+                    self.present(messageComposer, animated: true, completion: nil)
+                }
             }
+            
         }
         
     }
@@ -371,7 +347,7 @@ extension ComplaintsViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if self.complaintsField.text.isEmpty {
-            self.complaintsField.text = "this is placeholder"
+            self.complaintsField.text = "자세한 민원사항을 입력해주세요."
             self.complaintsField.textColor = UIColor.lightGray
         }
     }
